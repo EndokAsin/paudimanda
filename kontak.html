@@ -4,102 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontak - PAUD Imanda Bandung</title>
+    <meta name="description" content="Hubungi PAUD Imanda Bandung - Sekolah Penggerak Angkatan 2. Informasi alamat, telepon, email, dan formulir kontak kami.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
+    
     <header>
         <div class="container header-container">
             <div class="logo">
-                <img src="logo.png" alt="Logo PAUD Imanda">
+                <img src="logo.png" alt="Logo PAUD Imanda" width="50" height="50" loading="lazy">
                 <div class="logo-text">
                     <h1>PAUD Imanda</h1>
                     <p>Sekolah Penggerak Angkatan 2</p>
                 </div>
             </div>
-            <nav>
+            
+            <button class="mobile-menu-toggle" aria-label="Buka menu navigasi" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <nav aria-label="Menu utama">
                 <ul>
                     <li><a href="index.html">Beranda</a></li>
                     <li><a href="profil.html">Profil</a></li>
                     <li><a href="program.html">Program</a></li>
                     <li><a href="galeri.html">Galeri</a></li>
                     <li><a href="pendaftaran.html">Pendaftaran</a></li>
-                    <li><a href="kontak.html" class="active">Kontak</a></li>
+                    <li><a href="kontak.html" class="active" aria-current="page">Kontak</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <div class="container">
-        <main>
-            <h2 class="section-title">Hubungi Kami</h2>
-            <p>Jangan ragu untuk menghubungi kami jika ada pertanyaan atau ingin menjadwalkan kunjungan ke sekolah. Kami siap membantu Anda.</p>
+        <main id="main-content">
+            <h1 class="section-title">Hubungi Kami</h1>
+            <p class="section-description">Jangan ragu untuk menghubungi kami jika ada pertanyaan atau ingin menjadwalkan kunjungan ke sekolah. Kami siap membantu Anda.</p>
             
             <div class="contact-grid">
-                <div class="contact-card fade-in">
+                <section class="contact-card fade-in" aria-labelledby="address-heading">
                     <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                     </div>
-                    <h3>Alamat</h3>
-                    <p>Jln. Halteu Utara VI No. 1, RT 04 RW 02<br>
-                    Kelurahan Dunguscariang, Kecamatan Andir<br>
-                    Bandung, Jawa Barat 40183</p>
-                </div>
-                
-                <div class="contact-card fade-in" style="animation-delay: 0.2s;">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <h3>Telepon</h3>
-                    <p>(022) 1234567<br>
-                    WhatsApp: 0812-3456-7890</p>
-                    <a href="https://wa.me/6281234567890" class="btn btn-outline" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
+                    <h3 id="address-heading">Alamat</h3>
+                    <address>
+                        Jln. Halteu Utara VI No. 1, RT 04 RW 02<br>
+                        Kelurahan Dunguscariang, Kecamatan Andir<br>
+                        Bandung, Jawa Barat 40183
+                    </address>
+                    <a href="https://maps.google.com?q=PAUD+IMANDA+Bandung" class="btn btn-outline" target="_blank" rel="noopener">
+                        <i class="fas fa-directions" aria-hidden="true"></i> Petunjuk Arah
                     </a>
-                </div>
+                </section>
                 
-                <div class="contact-card fade-in" style="animation-delay: 0.4s;">
+                <section class="contact-card fade-in" style="animation-delay: 0.2s;" aria-labelledby="phone-heading">
                     <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
                     </div>
-                    <h3>Email</h3>
-                    <p>info@paudimanda.sch.id<br>
-                    pendaftaran@paudimanda.sch.id</p>
+                    <h3 id="phone-heading">Telepon</h3>
+                    <p>
+                        <a href="tel:+62221234567">(022) 1234567</a><br>
+                        WhatsApp: <a href="https://wa.me/6281234567890">0812-3456-7890</a>
+                    </p>
+                    <a href="https://wa.me/6281234567890" class="btn btn-outline" target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Hubungi via WhatsApp
+                    </a>
+                </section>
+                
+                <section class="contact-card fade-in" style="animation-delay: 0.4s;" aria-labelledby="email-heading">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </div>
+                    <h3 id="email-heading">Email</h3>
+                    <p>
+                        <a href="mailto:info@paudimanda.sch.id">info@paudimanda.sch.id</a><br>
+                        <a href="mailto:pendaftaran@paudimanda.sch.id">pendaftaran@paudimanda.sch.id</a>
+                    </p>
                     <a href="mailto:info@paudimanda.sch.id" class="btn btn-outline">
-                        <i class="fas fa-paper-plane"></i> Kirim Email
+                        <i class="fas fa-paper-plane" aria-hidden="true"></i> Kirim Email
                     </a>
-                </div>
+                </section>
                 
-                <div class="contact-card fade-in" style="animation-delay: 0.6s;">
+                <section class="contact-card fade-in" style="animation-delay: 0.6s;" aria-labelledby="hours-heading">
                     <div class="contact-icon">
-                        <i class="fas fa-clock"></i>
+                        <i class="fas fa-clock" aria-hidden="true"></i>
                     </div>
-                    <h3>Jam Operasional</h3>
-                    <p>Senin - Jumat: 07.30 - 14.00 WIB<br>
-                    Sabtu: 08.00 - 12.00 WIB<br>
-                    Minggu & Hari Libur: Tutup</p>
-                </div>
+                    <h3 id="hours-heading">Jam Operasional</h3>
+                    <p>
+                        <time datetime="Mo-Fr 07:30-14:00">Senin - Jumat: 07.30 - 14.00 WIB</time><br>
+                        <time datetime="Sa 08:00-12:00">Sabtu: 08.00 - 12.00 WIB</time><br>
+                        Minggu & Hari Libur: Tutup
+                    </p>
+                </section>
             </div>
             
-            <div class="card fade-in" style="animation-delay: 0.8s;">
+            <section class="card fade-in" style="animation-delay: 0.8s;" aria-labelledby="form-heading">
                 <div class="card-content">
-                    <h3 class="subtitle">Kirim Pesan kepada Kami</h3>
+                    <h3 id="form-heading" class="subtitle">Kirim Pesan kepada Kami</h3>
                     <form id="contactForm" class="contact-form">
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="contactName" class="form-label">Nama Lengkap</label>
-                                <input type="text" id="contactName" class="form-control" required>
+                                <label for="contactName" class="form-label">Nama Lengkap <span class="required">*</span></label>
+                                <input type="text" id="contactName" class="form-control" required aria-required="true">
                             </div>
                             
                             <div class="form-group">
-                                <label for="contactEmail" class="form-label">Email</label>
-                                <input type="email" id="contactEmail" class="form-control" required>
+                                <label for="contactEmail" class="form-label">Email <span class="required">*</span></label>
+                                <input type="email" id="contactEmail" class="form-control" required aria-required="true">
                             </div>
                         </div>
                         
                         <div class="form-group">
-                            <label for="contactSubject" class="form-label">Subjek</label>
-                            <select id="contactSubject" class="form-control" required>
+                            <label for="contactPhone" class="form-label">Nomor Telepon/WhatsApp</label>
+                            <input type="tel" id="contactPhone" class="form-control" pattern="[0-9]{10,15}">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactSubject" class="form-label">Subjek <span class="required">*</span></label>
+                            <select id="contactSubject" class="form-control" required aria-required="true">
                                 <option value="">Pilih Subjek</option>
                                 <option value="pendaftaran">Pendaftaran Siswa Baru</option>
                                 <option value="informasi">Permintaan Informasi</option>
@@ -109,29 +136,34 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="contactMessage" class="form-label">Pesan</label>
-                            <textarea id="contactMessage" class="form-control" rows="5" required></textarea>
+                            <label for="contactMessage" class="form-label">Pesan <span class="required">*</span></label>
+                            <textarea id="contactMessage" class="form-control" rows="5" required aria-required="true"></textarea>
                         </div>
                         
                         <div class="form-group">
-                            <button type="submit" class="btn">Kirim Pesan</button>
+                            <button type="submit" class="btn">
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i> Kirim Pesan
+                            </button>
                         </div>
                     </form>
                 </div>
-            </div>
+            </section>
             
-            <h3 class="subtitle fade-in" style="animation-delay: 1s;">Lokasi Kami</h3>
-            <div class="map-container fade-in" style="animation-delay: 1s;">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.969874837581!2d107.58550181477268!3d-6.89413899501838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e643c680962b%3A0x6739655f8849b4c0!2sPAUD%20IMANDA!5e0!3m2!1sen!2sid!4v1722864115201!5m2!1sen!2sid" 
-                    width="100%" 
-                    height="450" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
+            <section class="map-section fade-in" style="animation-delay: 1s;" aria-labelledby="map-heading">
+                <h3 id="map-heading" class="subtitle">Lokasi Kami</h3>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.969874837581!2d107.58550181477268!3d-6.89413899501838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e643c680962b%3A0x6739655f8849b4c0!2sPAUD%20IMANDA!5e0!3m2!1sen!2sid!4v1722864115201!5m2!1sen!2sid" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Peta Lokasi PAUD Imanda Bandung">
+                    </iframe>
+                </div>
+            </section>
         </main>
     </div>
 
@@ -141,10 +173,10 @@
                 <h3>Tentang Kami</h3>
                 <p>PAUD Imanda adalah lembaga pendidikan anak usia dini yang berdedikasi untuk menciptakan fondasi yang kokoh bagi masa depan anak-anak.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Facebook PAUD Imanda"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram PAUD Imanda"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube PAUD Imanda"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/6281234567890" aria-label="WhatsApp PAUD Imanda"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             
@@ -161,20 +193,102 @@
             
             <div class="footer-column">
                 <h3>Kontak Kami</h3>
-                <ul class="footer-links">
-                    <li><i class="fas fa-map-marker-alt"></i> Jln. Halteu Utara VI No. 1, Bandung</li>
-                    <li><i class="fas fa-phone"></i> (022) 1234567</li>
-                    <li><i class="fas fa-envelope"></i> info@paudimanda.sch.id</li>
-                    <li><i class="fas fa-clock"></i> Senin-Jumat: 07.30-14.00</li>
-                </ul>
+                <address>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Jln. Halteu Utara VI No. 1, Bandung</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+62221234567">(022) 1234567</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@paudimanda.sch.id">info@paudimanda.sch.id</a></li>
+                        <li><i class="fas fa-clock"></i> Senin-Jumat: 07.30-14.00</li>
+                    </ul>
+                </address>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2023 PAUD Imanda Bandung. Semua Hak Dilindungi.</p>
+            <p>&copy; <span id="current-year">2023</span> PAUD Imanda Bandung. Semua Hak Dilindungi.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Back to Top Button -->
+    <a href="#top" class="back-to-top" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('nav');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', menuToggle.classList.contains('active'));
+        });
+
+        // Form Validation
+        const contactForm = document.getElementById('contactForm');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Simple validation
+                let isValid = true;
+                const requiredFields = this.querySelectorAll('[required]');
+                
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        field.classList.add('error');
+                        isValid = false;
+                    } else {
+                        field.classList.remove('error');
+                    }
+                });
+                
+                if (isValid) {
+                    // Here you would typically send the form data to a server
+                    alert('Terima kasih! Pesan Anda telah berhasil dikirim.');
+                    this.reset();
+                } else {
+                    alert('Silakan lengkapi semua field yang wajib diisi.');
+                }
+            });
+        }
+
+        // Update current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Back to top button visibility
+        window.addEventListener('scroll', () => {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.style.opacity = '1';
+                backToTop.style.visibility = 'visible';
+            } else {
+                backToTop.style.opacity = '0';
+                backToTop.style.visibility = 'hidden';
+            }
+        });
+
+        // Animate elements on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.fade-in:not(.animated)');
+            const windowHeight = window.innerHeight;
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('animated');
+                    const delay = element.getAttribute('data-delay') || 0;
+                    element.style.animationDelay = `${delay}ms`;
+                }
+            });
+        };
+
+        // Run on load and scroll
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
 </body>
 </html>
