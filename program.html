@@ -3,27 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Program unggulan PAUD Imanda Bandung mencakup pengembangan kesehatan, kecerdasan, dan karakter anak melalui kegiatan sehat, pembelajaran kreatif, dan aktivitas ceria.">
     <title>Program - PAUD Imanda Bandung</title>
+    <meta name="description" content="PAUD Imanda Bandung - Sekolah Penggerak Angkatan 2. Program pendidikan anak usia dini terbaik untuk generasi sehat, cerdas, dan ceria.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
-                <img src="logo.png" alt="Logo PAUD Imanda">
+                <img src="logo.png" alt="Logo PAUD Imanda Bandung" width="50" height="50">
                 <div class="logo-text">
                     <h1>PAUD Imanda</h1>
                     <p>Sekolah Penggerak Angkatan 2</p>
                 </div>
             </div>
-            <nav>
+            
+            <!-- Tombol Hamburger -->
+            <button class="mobile-menu-toggle" aria-label="Buka menu navigasi" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <!-- Navigasi -->
+            <nav aria-label="Menu utama">
                 <ul>
                     <li><a href="index.html">Beranda</a></li>
                     <li><a href="profil.html">Profil</a></li>
-                    <li><a href="program.html" class="active">Program</a></li>
+                    <li><a href="program.html" class="active" aria-current="page">Program</a></li>
                     <li><a href="galeri.html">Galeri</a></li>
                     <li><a href="pendaftaran.html">Pendaftaran</a></li>
                     <li><a href="kontak.html">Kontak</a></li>
@@ -32,135 +41,135 @@
         </div>
     </header>
 
-    <!-- Main Content -->
     <div class="container">
         <main>
-            <h2 class="section-title">Program Unggulan Kami</h2>
-            <p class="intro-text">Seluruh program kami dirancang untuk mendukung motto <strong>Sehat, Cerdas, Ceria</strong>, memastikan setiap anak mendapatkan stimulasi yang seimbang di berbagai aspek perkembangan.</p>
+            <article>
+                <h2 class="section-title fade-in">Program Unggulan Kami</h2>
+                <p class="intro-text">Seluruh program kami dirancang untuk mendukung motto <strong>Sehat, Cerdas, Ceria</strong>, memastikan setiap anak mendapatkan stimulasi yang seimbang di berbagai aspek perkembangan.</p>
 
-            <!-- Navigasi Internal -->
-            <nav class="program-nav">
-                <a href="#kesehatan">Kesehatan</a>
-                <a href="#kecerdasan">Kecerdasan</a>
-                <a href="#karakter">Karakter</a>
-            </nav>
+                <!-- Navigasi Internal -->
+                <nav class="program-nav" aria-label="Navigasi program">
+                    <a href="#kesehatan">Kesehatan</a>
+                    <a href="#kecerdasan">Kecerdasan</a>
+                    <a href="#karakter">Karakter</a>
+                </nav>
 
-            <!-- Program Kesehatan -->
-            <section id="kesehatan" class="program-section fade-in">
-                <h3 class="subtitle">Program Pengembangan Kesehatan</h3>
-                <div class="card-grid">
-                    <article class="card">
-                        <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?auto=format&fit=crop&w=500&q=80" alt="Anak-anak PAUD Imanda melakukan senam pagi di halaman sekolah">
-                        </div>
-                        <div class="card-content">
-                            <h4 class="card-title">Senam Pagi Ceria</h4>
-                            <p>Aktivitas fisik untuk melatih motorik kasar anak dengan gerakan-gerakan menyenangkan.</p>
-                            <ul class="styled-list">
-                                <li>Setiap hari Senin dan Kamis</li>
-                                <li>Dibimbing oleh instruktur profesional</li>
-                                <li>Musik dan gerakan khusus anak</li>
-                            </ul>
-                        </div>
-                    </article>
+                <!-- Program Kesehatan -->
+                <section id="kesehatan" class="fade-in">
+                    <h3 class="subtitle">Program Pengembangan Kesehatan</h3>
+                    <div class="card-grid">
+                        <section class="card" aria-labelledby="senam-title">
+                            <div class="card-img">
+                                <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?auto=format&fit=crop&w=500&q=80" alt="Anak-anak PAUD Imanda melakukan senam pagi di halaman sekolah" loading="lazy" width="500" height="300">
+                            </div>
+                            <div class="card-content">
+                                <h4 class="card-title" id="senam-title">Senam Pagi Ceria</h4>
+                                <p>Aktivitas fisik untuk melatih motorik kasar anak dengan gerakan-gerakan menyenangkan.</p>
+                                <ul class="styled-list">
+                                    <li>Setiap hari Senin dan Kamis</li>
+                                    <li>Dibimbing oleh instruktur profesional</li>
+                                    <li>Musik dan gerakan khusus anak</li>
+                                </ul>
+                            </div>
+                        </section>
 
-                    <article class="card">
-                        <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1512058564366-c9e8b12d483e?auto=format&fit=crop&w=500&q=80" alt="Anak-anak PAUD Imanda sarapan bersama di kantin sehat">
-                        </div>
-                        <div class="card-content">
-                            <h4 class="card-title">Sarapan Sehat Bersama</h4>
-                            <p>Edukasi gizi dan pembiasaan makan makanan sehat dengan menu seimbang.</p>
-                            <ul class="styled-list">
-                                <li>Menu bergizi seimbang</li>
-                                <li>Pola makan teratur</li>
-                                <li>Kebersamaan saat makan</li>
-                            </ul>
-                        </div>
-                    </article>
+                        <section class="card" aria-labelledby="sarapan-title">
+                            <div class="card-img">
+                                <img src="https://images.unsplash.com/photo-1512058564366-c9e8b12d483e?auto=format&fit=crop&w=500&q=80" alt="Anak-anak PAUD Imanda sarapan bersama di kantin sehat" loading="lazy" width="500" height="300">
+                            </div>
+                            <div class="card-content">
+                                <h4 class="card-title" id="sarapan-title">Sarapan Sehat Bersama</h4>
+                                <p>Edukasi gizi dan pembiasaan makan makanan sehat dengan menu seimbang.</p>
+                                <ul class="styled-list">
+                                    <li>Menu bergizi seimbang</li>
+                                    <li>Pola makan teratur</li>
+                                    <li>Kebersamaan saat makan</li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+
+                <!-- Program Kecerdasan -->
+                <section id="kecerdasan" class="fade-in" style="animation-delay: 0.2s;">
+                    <h3 class="subtitle">Program Pengembangan Kecerdasan</h3>
+                    <div class="card-grid">
+                        <section class="card" aria-labelledby="proyek-title">
+                            <div class="card-img">
+                                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=500&q=80" alt="Anak-anak PAUD Imanda belajar menanam tanaman dalam proyek kelas" loading="lazy" width="500" height="300">
+                            </div>
+                            <div class="card-content">
+                                <h4 class="card-title" id="proyek-title">Pembelajaran Berbasis Proyek</h4>
+                                <p>Menggali tema-tema menarik seperti "Tanamanku" atau "Duniaku" melalui eksplorasi langsung.</p>
+                                <ul class="styled-list">
+                                    <li>Topik menarik setiap bulan</li>
+                                    <li>Pembelajaran kontekstual</li>
+                                    <li>Pengalaman langsung</li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <section class="card" aria-labelledby="seni-title">
+                            <div class="card-img">
+                                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=500&q=80" alt="Anak-anak PAUD Imanda menggambar dan melukis di sentra seni" loading="lazy" width="500" height="300">
+                            </div>
+                            <div class="card-content">
+                                <h4 class="card-title" id="seni-title">Sentra Seni dan Kreativitas</h4>
+                                <p>Menggambar, melukis, dan membuat prakarya untuk mengembangkan kreativitas anak.</p>
+                                <ul class="styled-list">
+                                    <li>Ekspresi diri melalui seni</li>
+                                    <li>Berbagai media kreatif</li>
+                                    <li>Pameran karya rutin</li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+
+                <!-- Program Karakter -->
+                <section id="karakter" class="fade-in" style="animation-delay: 0.4s;">
+                    <h3 class="subtitle">Program Pengembangan Karakter Ceria</h3>
+                    <div class="card-grid">
+                        <section class="card" aria-labelledby="circle-title">
+                            <div class="card-img">
+                                <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?auto=format&fit=crop&w=500&q=80" alt="Anak-anak PAUD Imanda duduk melingkar mengikuti sesi circle time" loading="lazy" width="500" height="300">
+                            </div>
+                            <div class="card-content">
+                                <h4 class="card-title" id="circle-title">Circle Time</h4>
+                                <p>Berbagi cerita dan perasaan untuk membangun empati dan keterampilan sosial anak.</p>
+                                <ul class="styled-list">
+                                    <li>Setiap pagi sebelum belajar</li>
+                                    <li>Berbagi pengalaman</li>
+                                    <li>Mengungkapkan perasaan</li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <section class="card" aria-labelledby="kunjungan-title">
+                            <div class="card-img">
+                                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=500&q=80" alt="Anak-anak PAUD Imanda mengikuti kunjungan edukatif ke kebun binatang" loading="lazy" width="500" height="300">
+                            </div>
+                            <div class="card-content">
+                                <h4 class="card-title" id="kunjungan-title">Kunjungan Edukatif</h4>
+                                <p>Belajar langsung di luar sekolah untuk memperluas wawasan dan pengalaman anak.</p>
+                                <ul class="styled-list">
+                                    <li>Lokasi menarik dan edukatif</li>
+                                    <li>Pembelajaran kontekstual</li>
+                                    <li>Setiap semester</li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+
+                <!-- CTA -->
+                <div class="text-center" style="margin-top: 50px;">
+                    <a href="pendaftaran.html" class="btn" aria-label="Tombol daftar sekarang untuk PAUD Imanda">Daftar Sekarang</a>
                 </div>
-            </section>
-
-            <!-- Program Kecerdasan -->
-            <section id="kecerdasan" class="program-section fade-in" style="animation-delay: 0.2s;">
-                <h3 class="subtitle">Program Pengembangan Kecerdasan</h3>
-                <div class="card-grid">
-                    <article class="card">
-                        <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=500&q=80" alt="Anak-anak PAUD Imanda belajar menanam tanaman dalam proyek kelas">
-                        </div>
-                        <div class="card-content">
-                            <h4 class="card-title">Pembelajaran Berbasis Proyek</h4>
-                            <p>Menggali tema-tema menarik seperti "Tanamanku" atau "Duniaku" melalui eksplorasi langsung.</p>
-                            <ul class="styled-list">
-                                <li>Topik menarik setiap bulan</li>
-                                <li>Pembelajaran kontekstual</li>
-                                <li>Pengalaman langsung</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=500&q=80" alt="Anak-anak PAUD Imanda menggambar dan melukis di sentra seni">
-                        </div>
-                        <div class="card-content">
-                            <h4 class="card-title">Sentra Seni dan Kreativitas</h4>
-                            <p>Menggambar, melukis, dan membuat prakarya untuk mengembangkan kreativitas anak.</p>
-                            <ul class="styled-list">
-                                <li>Ekspresi diri melalui seni</li>
-                                <li>Berbagai media kreatif</li>
-                                <li>Pameran karya rutin</li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <!-- Program Karakter -->
-            <section id="karakter" class="program-section fade-in" style="animation-delay: 0.4s;">
-                <h3 class="subtitle">Program Pengembangan Karakter Ceria</h3>
-                <div class="card-grid">
-                    <article class="card">
-                        <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?auto=format&fit=crop&w=500&q=80" alt="Anak-anak PAUD Imanda duduk melingkar mengikuti sesi circle time">
-                        </div>
-                        <div class="card-content">
-                            <h4 class="card-title">Circle Time</h4>
-                            <p>Berbagi cerita dan perasaan untuk membangun empati dan keterampilan sosial anak.</p>
-                            <ul class="styled-list">
-                                <li>Setiap pagi sebelum belajar</li>
-                                <li>Berbagi pengalaman</li>
-                                <li>Mengungkapkan perasaan</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <div class="card-img">
-                            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=500&q=80" alt="Anak-anak PAUD Imanda mengikuti kunjungan edukatif ke kebun binatang">
-                        </div>
-                        <div class="card-content">
-                            <h4 class="card-title">Kunjungan Edukatif</h4>
-                            <p>Belajar langsung di luar sekolah untuk memperluas wawasan dan pengalaman anak.</p>
-                            <ul class="styled-list">
-                                <li>Lokasi menarik dan edukatif</li>
-                                <li>Pembelajaran kontekstual</li>
-                                <li>Setiap semester</li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <!-- CTA -->
-            <div class="text-center" style="margin-top: 50px;">
-                <a href="pendaftaran.html" class="btn" aria-label="Tombol daftar sekarang untuk PAUD Imanda">Daftar Sekarang</a>
-            </div>
+            </article>
         </main>
     </div>
 
-    <!-- Footer -->
     <footer>
         <div class="container footer-content">
             <div class="footer-column">
@@ -170,9 +179,10 @@
                     <a href="#" aria-label="Facebook PAUD Imanda"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" aria-label="Instagram PAUD Imanda"><i class="fab fa-instagram"></i></a>
                     <a href="#" aria-label="YouTube PAUD Imanda"><i class="fab fa-youtube"></i></a>
-                    <a href="#" aria-label="WhatsApp PAUD Imanda"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://wa.me/6281234567890" aria-label="WhatsApp PAUD Imanda"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
+            
             <div class="footer-column">
                 <h3>Link Cepat</h3>
                 <ul class="footer-links">
@@ -183,21 +193,92 @@
                     <li><a href="pendaftaran.html">Pendaftaran</a></li>
                 </ul>
             </div>
+            
             <div class="footer-column">
                 <h3>Kontak Kami</h3>
-                <ul class="footer-links">
-                    <li><i class="fas fa-map-marker-alt"></i> Jln. Halteu Utara VI No. 1, Bandung</li>
-                    <li><i class="fas fa-phone"></i> (022) 1234567</li>
-                    <li><i class="fas fa-envelope"></i> info@paudimanda.sch.id</li>
-                    <li><i class="fas fa-clock"></i> Senin-Jumat: 07.30-14.00</li>
-                </ul>
+                <address>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Jln. Halteu Utara VI No. 1, Bandung</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+62221234567">(022) 1234567</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@paudimanda.sch.id">info@paudimanda.sch.id</a></li>
+                        <li><i class="fas fa-clock"></i> Senin-Jumat: 07.30-14.00</li>
+                    </ul>
+                </address>
             </div>
         </div>
+        
         <div class="footer-bottom">
-            <p>&copy; 2023 PAUD Imanda Bandung. Semua Hak Dilindungi.</p>
+            <p>&copy; <span id="current-year">2023</span> PAUD Imanda Bandung. Semua Hak Dilindungi.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Back to Top Button -->
+    <a href="#top" class="back-to-top" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Script -->
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('nav');
+        const dropdownIcons = document.querySelectorAll('.dropdown-icon');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', menuToggle.classList.contains('active'));
+        });
+        
+        // Dropdown Menu for Mobile
+        document.querySelectorAll('.menu-item-has-children > a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const submenu = link.parentElement.querySelector('.submenu');
+                    const icon = link.querySelector('.dropdown-icon');
+                    
+                    submenu.classList.toggle('active');
+                    icon.classList.toggle('fa-chevron-up');
+                    icon.classList.toggle('fa-chevron-down');
+                }
+            });
+        });
+        
+        // Update year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Animate on scroll
+        const animateElements = () => {
+            const elements = document.querySelectorAll('.fade-in:not(.animated)');
+            const windowHeight = window.innerHeight;
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('animated');
+                    const delay = element.getAttribute('data-delay') || 0;
+                    element.style.animationDelay = `${delay}ms`;
+                }
+            });
+        };
+        
+        // Run on load and scroll
+        window.addEventListener('load', animateElements);
+        window.addEventListener('scroll', animateElements);
+        
+        // Back to top button visibility
+        window.addEventListener('scroll', () => {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.style.opacity = '1';
+                backToTop.style.visibility = 'visible';
+            } else {
+                backToTop.style.opacity = '0';
+                backToTop.style.visibility = 'hidden';
+            }
+        });
+    </script>
 </body>
 </html>
