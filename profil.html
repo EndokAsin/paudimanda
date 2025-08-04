@@ -10,16 +10,16 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <header class="site-header">
         <div class="container header-container">
             <div class="logo">
-                <img src="logo.png" alt="Logo PAUD Imanda Bandung">
+                <img src="logo.png" alt="Logo PAUD Imanda Bandung" class="logo-img">
                 <div class="logo-text">
                     <h1>PAUD Imanda</h1>
                     <p>Sekolah Penggerak Angkatan 2</p>
                 </div>
             </div>
-            <nav aria-label="Navigasi utama">
+            <nav class="main-nav" aria-label="Navigasi utama">
                 <ul>
                     <li><a href="index.html">Beranda</a></li>
                     <li><a href="profil.html" class="active">Profil</a></li>
@@ -32,47 +32,47 @@
         </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- Main -->
     <main class="container">
-        <section>
+        <!-- Profil Sekolah -->
+        <section class="section fade-in">
             <h2 class="section-title">Profil Sekolah</h2>
-            
-            <article class="card fade-in">
-                <figure class="card-img">
-                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1000&q=80" alt="Tampak depan gedung PAUD Imanda Bandung">
-                </figure>
+            <div class="card-grid two-columns">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1000&q=80" alt="Gedung PAUD Imanda Bandung">
+                </div>
                 <div class="card-content">
                     <h3 class="subtitle">Tentang Kami</h3>
-                    <p>PAUD Imanda adalah lembaga pendidikan anak usia dini yang berdedikasi untuk menciptakan fondasi kokoh bagi masa depan anak-anak. Sebagai <strong>Sekolah Penggerak Angkatan 2</strong>, kami berada di garis depan inovasi pendidikan, menerapkan Kurikulum Merdeka yang berfokus pada pengembangan karakter dan kompetensi esensial anak sejak dini.</p>
-                    
-                    <div class="card-grid stats">
-                        <div class="stat-card">
-                            <div class="stat-number">15+</div>
-                            <p class="stat-label">Tahun Pengalaman</p>
+                    <p>PAUD Imanda adalah lembaga pendidikan anak usia dini yang berdedikasi menciptakan fondasi kokoh bagi masa depan anak-anak. Sebagai <strong>Sekolah Penggerak Angkatan 2</strong>, kami berada di garis depan inovasi pendidikan, menerapkan Kurikulum Merdeka yang berfokus pada pengembangan karakter dan kompetensi esensial anak sejak dini.</p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Tahun Pengalaman</span>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-number">200+</div>
-                            <p class="stat-label">Siswa Aktif</p>
+                        <div class="stat-item">
+                            <span class="stat-number">200+</span>
+                            <span class="stat-label">Siswa Aktif</span>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-number">20+</div>
-                            <p class="stat-label">Guru Berpengalaman</p>
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Guru Berpengalaman</span>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-number">5</div>
-                            <p class="stat-label">Program Unggulan</p>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Program Unggulan</span>
                         </div>
                     </div>
                 </div>
-            </article>
+            </div>
         </section>
 
-        <section class="about-section fade-in" style="animation-delay: 0.2s;">
+        <!-- Visi & Misi -->
+        <section class="section fade-in" style="animation-delay: 0.2s;">
             <h3 class="subtitle">Visi Kami</h3>
             <blockquote class="vision-box">
                 “Terwujudnya generasi penerus yang sehat jasmani dan rohani, cerdas dalam berpikir dan bertindak, serta ceria dalam menjalani kehidupan sebagai insan yang berakhlak mulia.”
             </blockquote>
-            
+
             <h3 class="subtitle">Misi Kami</h3>
             <ul class="styled-list">
                 <li>Menyelenggarakan layanan pendidikan yang holistik dan berpusat pada anak.</li>
@@ -81,7 +81,10 @@
                 <li>Membangun kemitraan yang kuat antara sekolah, orang tua, dan masyarakat.</li>
                 <li>Menerapkan kurikulum yang adaptif dan relevan dengan kebutuhan anak.</li>
             </ul>
-            
+        </section>
+
+        <!-- Fasilitas -->
+        <section class="section fade-in" style="animation-delay: 0.4s;">
             <h3 class="subtitle">Fasilitas Kami</h3>
             <div class="facilities-grid">
                 <div class="facility-item"><i class="fas fa-school"></i><span>Ruang Kelas Nyaman</span></div>
@@ -95,11 +98,11 @@
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="site-footer">
         <div class="container footer-content">
             <div class="footer-column">
                 <h3>Tentang Kami</h3>
-                <p>PAUD Imanda adalah lembaga pendidikan anak usia dini yang berdedikasi untuk menciptakan fondasi kokoh bagi masa depan anak-anak.</p>
+                <p>PAUD Imanda adalah lembaga pendidikan anak usia dini yang berdedikasi menciptakan fondasi kokoh bagi masa depan anak-anak.</p>
                 <div class="social-links">
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -107,7 +110,6 @@
                     <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
-            
             <div class="footer-column">
                 <h3>Link Cepat</h3>
                 <ul class="footer-links">
@@ -118,7 +120,6 @@
                     <li><a href="pendaftaran.html">Pendaftaran</a></li>
                 </ul>
             </div>
-            
             <div class="footer-column">
                 <h3>Kontak Kami</h3>
                 <ul class="footer-links">
@@ -129,7 +130,6 @@
                 </ul>
             </div>
         </div>
-        
         <div class="footer-bottom">
             <p>&copy; 2023 PAUD Imanda Bandung. Semua Hak Dilindungi.</p>
         </div>
