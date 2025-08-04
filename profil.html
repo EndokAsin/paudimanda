@@ -3,26 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Profil PAUD Imanda Bandung - Sekolah Penggerak Angkatan 2 yang berdedikasi menciptakan generasi sehat, cerdas, ceria, dan berakhlak mulia.">
     <title>Profil - PAUD Imanda Bandung</title>
+    <meta name="description" content="PAUD Imanda Bandung - Sekolah Penggerak Angkatan 2. Pendidikan anak usia dini terbaik untuk generasi sehat, cerdas, dan ceria.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <!-- Header -->
-    <header class="site-header">
+    <header>
         <div class="container header-container">
             <div class="logo">
-                <img src="logo.png" alt="Logo PAUD Imanda Bandung" class="logo-img">
+                <img src="logo.png" alt="Logo PAUD Imanda Bandung" width="50" height="50">
                 <div class="logo-text">
                     <h1>PAUD Imanda</h1>
                     <p>Sekolah Penggerak Angkatan 2</p>
                 </div>
             </div>
-            <nav class="main-nav" aria-label="Navigasi utama">
+            
+            <!-- Tombol Hamburger -->
+            <button class="mobile-menu-toggle" aria-label="Buka menu navigasi" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <!-- Navigasi -->
+            <nav aria-label="Menu utama">
                 <ul>
                     <li><a href="index.html">Beranda</a></li>
-                    <li><a href="profil.html" class="active">Profil</a></li>
+                    <li><a href="profil.html" class="active" aria-current="page">Profil</a></li>
                     <li><a href="program.html">Program</a></li>
                     <li><a href="galeri.html">Galeri</a></li>
                     <li><a href="pendaftaran.html">Pendaftaran</a></li>
@@ -32,84 +41,87 @@
         </div>
     </header>
 
-    <!-- Main -->
-    <main class="container">
-        <!-- Profil Sekolah -->
-        <section class="section fade-in">
-            <h2 class="section-title">Profil Sekolah</h2>
-            <div class="card-grid two-columns">
-                <div class="card-img">
-                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1000&q=80" alt="Gedung PAUD Imanda Bandung">
+    <div class="container">
+        <main>
+            <!-- Profil Sekolah -->
+            <article class="fade-in">
+                <h2 class="section-title">Profil Sekolah</h2>
+                <div class="card-grid">
+                    <section class="card" aria-labelledby="tentang-kami-title">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=500&q=80" alt="Gedung PAUD Imanda Bandung" loading="lazy" width="500" height="300">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title" id="tentang-kami-title">Tentang Kami</h3>
+                            <p>PAUD Imanda adalah lembaga pendidikan anak usia dini yang berdedikasi menciptakan fondasi kokoh bagi masa depan anak-anak. Sebagai <strong>Sekolah Penggerak Angkatan 2</strong>, kami berada di garis depan inovasi pendidikan, menerapkan Kurikulum Merdeka yang berfokus pada pengembangan karakter dan kompetensi esensial anak sejak dini.</p>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <span class="stat-number">15+</span>
+                                    <span class="stat-label">Tahun Pengalaman</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">200+</span>
+                                    <span class="stat-label">Siswa Aktif</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">20+</span>
+                                    <span class="stat-label">Guru Berpengalaman</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">5</span>
+                                    <span class="stat-label">Program Unggulan</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-                <div class="card-content">
-                    <h3 class="subtitle">Tentang Kami</h3>
-                    <p>PAUD Imanda adalah lembaga pendidikan anak usia dini yang berdedikasi menciptakan fondasi kokoh bagi masa depan anak-anak. Sebagai <strong>Sekolah Penggerak Angkatan 2</strong>, kami berada di garis depan inovasi pendidikan, menerapkan Kurikulum Merdeka yang berfokus pada pengembangan karakter dan kompetensi esensial anak sejak dini.</p>
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <span class="stat-number">15+</span>
-                            <span class="stat-label">Tahun Pengalaman</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">200+</span>
-                            <span class="stat-label">Siswa Aktif</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">20+</span>
-                            <span class="stat-label">Guru Berpengalaman</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">5</span>
-                            <span class="stat-label">Program Unggulan</span>
-                        </div>
-                    </div>
+            </article>
+
+            <!-- Visi & Misi -->
+            <section class="fade-in" style="animation-delay: 0.2s;">
+                <h3 class="subtitle">Visi Kami</h3>
+                <blockquote class="vision-box">
+                    "Terwujudnya generasi penerus yang sehat jasmani dan rohani, cerdas dalam berpikir dan bertindak, serta ceria dalam menjalani kehidupan sebagai insan yang berakhlak mulia."
+                </blockquote>
+
+                <h3 class="subtitle">Misi Kami</h3>
+                <ul class="styled-list">
+                    <li>Menyelenggarakan layanan pendidikan yang holistik dan berpusat pada anak</li>
+                    <li>Menciptakan lingkungan belajar yang aman, nyaman, dan merangsang eksplorasi</li>
+                    <li>Mengembangkan potensi anak secara optimal melalui kegiatan bermain yang terarah</li>
+                    <li>Membangun kemitraan yang kuat antara sekolah, orang tua, dan masyarakat</li>
+                    <li>Menerapkan kurikulum yang adaptif dan relevan dengan kebutuhan anak</li>
+                </ul>
+            </section>
+
+            <!-- Fasilitas -->
+            <section class="fade-in" style="animation-delay: 0.4s;">
+                <h3 class="subtitle">Fasilitas Kami</h3>
+                <div class="facilities-grid">
+                    <div class="facility-item"><i class="fas fa-school"></i><span>Ruang Kelas Nyaman</span></div>
+                    <div class="facility-item"><i class="fas fa-gamepad"></i><span>Area Bermain Edukatif</span></div>
+                    <div class="facility-item"><i class="fas fa-book"></i><span>Perpustakaan Anak</span></div>
+                    <div class="facility-item"><i class="fas fa-utensils"></i><span>Kantin Sehat</span></div>
+                    <div class="facility-item"><i class="fas fa-shield-alt"></i><span>Keamanan 24 Jam</span></div>
+                    <div class="facility-item"><i class="fas fa-procedures"></i><span>Klinik Kesehatan</span></div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
+    </div>
 
-        <!-- Visi & Misi -->
-        <section class="section fade-in" style="animation-delay: 0.2s;">
-            <h3 class="subtitle">Visi Kami</h3>
-            <blockquote class="vision-box">
-                “Terwujudnya generasi penerus yang sehat jasmani dan rohani, cerdas dalam berpikir dan bertindak, serta ceria dalam menjalani kehidupan sebagai insan yang berakhlak mulia.”
-            </blockquote>
-
-            <h3 class="subtitle">Misi Kami</h3>
-            <ul class="styled-list">
-                <li>Menyelenggarakan layanan pendidikan yang holistik dan berpusat pada anak.</li>
-                <li>Menciptakan lingkungan belajar yang aman, nyaman, dan merangsang eksplorasi.</li>
-                <li>Mengembangkan potensi anak secara optimal melalui kegiatan bermain yang terarah.</li>
-                <li>Membangun kemitraan yang kuat antara sekolah, orang tua, dan masyarakat.</li>
-                <li>Menerapkan kurikulum yang adaptif dan relevan dengan kebutuhan anak.</li>
-            </ul>
-        </section>
-
-        <!-- Fasilitas -->
-        <section class="section fade-in" style="animation-delay: 0.4s;">
-            <h3 class="subtitle">Fasilitas Kami</h3>
-            <div class="facilities-grid">
-                <div class="facility-item"><i class="fas fa-school"></i><span>Ruang Kelas Nyaman</span></div>
-                <div class="facility-item"><i class="fas fa-gamepad"></i><span>Area Bermain Edukatif</span></div>
-                <div class="facility-item"><i class="fas fa-book"></i><span>Perpustakaan Anak</span></div>
-                <div class="facility-item"><i class="fas fa-utensils"></i><span>Kantin Sehat</span></div>
-                <div class="facility-item"><i class="fas fa-shield-alt"></i><span>Keamanan 24 Jam</span></div>
-                <div class="facility-item"><i class="fas fa-procedures"></i><span>Klinik Kesehatan</span></div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="site-footer">
+    <footer>
         <div class="container footer-content">
             <div class="footer-column">
                 <h3>Tentang Kami</h3>
-                <p>PAUD Imanda adalah lembaga pendidikan anak usia dini yang berdedikasi menciptakan fondasi kokoh bagi masa depan anak-anak.</p>
+                <p>PAUD Imanda adalah lembaga pendidikan anak usia dini yang berdedikasi untuk menciptakan fondasi yang kokoh bagi masa depan anak-anak.</p>
                 <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Facebook PAUD Imanda"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram PAUD Imanda"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube PAUD Imanda"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/6281234567890" aria-label="WhatsApp PAUD Imanda"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
+            
             <div class="footer-column">
                 <h3>Link Cepat</h3>
                 <ul class="footer-links">
@@ -120,21 +132,92 @@
                     <li><a href="pendaftaran.html">Pendaftaran</a></li>
                 </ul>
             </div>
+            
             <div class="footer-column">
                 <h3>Kontak Kami</h3>
-                <ul class="footer-links">
-                    <li><i class="fas fa-map-marker-alt"></i> Jln. Halteu Utara VI No. 1, Bandung</li>
-                    <li><i class="fas fa-phone"></i> (022) 1234567</li>
-                    <li><i class="fas fa-envelope"></i> info@paudimanda.sch.id</li>
-                    <li><i class="fas fa-clock"></i> Senin–Jumat: 07.30–14.00</li>
-                </ul>
+                <address>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Jln. Halteu Utara VI No. 1, Bandung</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+62221234567">(022) 1234567</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@paudimanda.sch.id">info@paudimanda.sch.id</a></li>
+                        <li><i class="fas fa-clock"></i> Senin-Jumat: 07.30-14.00</li>
+                    </ul>
+                </address>
             </div>
         </div>
+        
         <div class="footer-bottom">
-            <p>&copy; 2023 PAUD Imanda Bandung. Semua Hak Dilindungi.</p>
+            <p>&copy; <span id="current-year">2023</span> PAUD Imanda Bandung. Semua Hak Dilindungi.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Back to Top Button -->
+    <a href="#top" class="back-to-top" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Script -->
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('nav');
+        const dropdownIcons = document.querySelectorAll('.dropdown-icon');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', menuToggle.classList.contains('active'));
+        });
+        
+        // Dropdown Menu for Mobile
+        document.querySelectorAll('.menu-item-has-children > a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const submenu = link.parentElement.querySelector('.submenu');
+                    const icon = link.querySelector('.dropdown-icon');
+                    
+                    submenu.classList.toggle('active');
+                    icon.classList.toggle('fa-chevron-up');
+                    icon.classList.toggle('fa-chevron-down');
+                }
+            });
+        });
+        
+        // Update year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Animate on scroll
+        const animateElements = () => {
+            const elements = document.querySelectorAll('.fade-in:not(.animated)');
+            const windowHeight = window.innerHeight;
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('animated');
+                    const delay = element.getAttribute('data-delay') || 0;
+                    element.style.animationDelay = `${delay}ms`;
+                }
+            });
+        };
+        
+        // Run on load and scroll
+        window.addEventListener('load', animateElements);
+        window.addEventListener('scroll', animateElements);
+        
+        // Back to top button visibility
+        window.addEventListener('scroll', () => {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.style.opacity = '1';
+                backToTop.style.visibility = 'visible';
+            } else {
+                backToTop.style.opacity = '0';
+                backToTop.style.visibility = 'hidden';
+            }
+        });
+    </script>
 </body>
 </html>
