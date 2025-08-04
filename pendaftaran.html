@@ -4,26 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pendaftaran - PAUD Imanda Bandung</title>
+    <meta name="description" content="Pendaftaran siswa baru PAUD Imanda Bandung. Bergabunglah bersama kami untuk pendidikan anak usia dini yang sehat, cerdas, dan ceria.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
         <div class="container header-container">
             <div class="logo">
-                <img src="logo.png" alt="Logo PAUD Imanda">
+                <img src="logo.png" alt="Logo PAUD Imanda Bandung" width="50" height="50">
                 <div class="logo-text">
                     <h1>PAUD Imanda</h1>
                     <p>Sekolah Penggerak Angkatan 2</p>
                 </div>
             </div>
-            <nav>
+            <nav aria-label="Menu utama">
                 <ul>
                     <li><a href="index.html">Beranda</a></li>
                     <li><a href="profil.html">Profil</a></li>
                     <li><a href="program.html">Program</a></li>
                     <li><a href="galeri.html">Galeri</a></li>
-                    <li><a href="pendaftaran.html" class="active">Pendaftaran</a></li>
+                    <li><a href="pendaftaran.html" class="active" aria-current="page">Pendaftaran</a></li>
                     <li><a href="kontak.html">Kontak</a></li>
                 </ul>
             </nav>
@@ -35,6 +37,7 @@
             <h2 class="section-title">Pendaftaran Siswa Baru</h2>
             <p>Bergabunglah dengan keluarga besar PAUD Imanda! Kami membuka pendaftaran siswa baru untuk tahun ajaran yang akan datang. Kuota terbatas untuk memastikan proses belajar yang fokus dan efektif.</p>
             
+            <!-- Alur Pendaftaran -->
             <div class="card fade-in">
                 <div class="card-content">
                     <h3 class="subtitle">Alur Pendaftaran</h3>
@@ -74,6 +77,7 @@
                 </div>
             </div>
             
+            <!-- Persyaratan Dokumen -->
             <div class="card fade-in" style="animation-delay: 0.2s;">
                 <div class="card-content">
                     <h3 class="subtitle">Persyaratan Dokumen</h3>
@@ -100,49 +104,50 @@
                         </div>
                         <div class="requirement-item">
                             <i class="fas fa-file-medical"></i>
-                            <span>Surat keterangan sehat dari dokter (untuk siswa baru)</span>
+                            <span>Surat keterangan sehat dari dokter</span>
                         </div>
                     </div>
                 </div>
             </div>
             
+            <!-- Formulir Online -->
             <div class="card fade-in" style="animation-delay: 0.4s;">
                 <div class="card-content">
                     <h3 class="subtitle">Formulir Pendaftaran Online</h3>
-                    <form id="registrationForm" class="registration-form">
+                    <form id="registrationForm" class="registration-form" action="#" method="post">
                         <div class="form-group">
                             <label for="childName" class="form-label">Nama Lengkap Anak</label>
-                            <input type="text" id="childName" class="form-control" required>
+                            <input type="text" id="childName" name="childName" class="form-control" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="birthDate" class="form-label">Tanggal Lahir</label>
-                            <input type="date" id="birthDate" class="form-control" required>
+                            <input type="date" id="birthDate" name="birthDate" class="form-control" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="parentName" class="form-label">Nama Orang Tua/Wali</label>
-                            <input type="text" id="parentName" class="form-control" required>
+                            <input type="text" id="parentName" name="parentName" class="form-control" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="phone" class="form-label">Nomor Telepon</label>
-                            <input type="tel" id="phone" class="form-control" required>
+                            <input type="tel" id="phone" name="phone" class="form-control" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" id="email" class="form-control" required>
+                            <input type="email" id="email" name="email" class="form-control" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="address" class="form-label">Alamat Lengkap</label>
-                            <textarea id="address" class="form-control" rows="3" required></textarea>
+                            <textarea id="address" name="address" class="form-control" rows="3" required></textarea>
                         </div>
                         
                         <div class="form-group">
                             <label for="program" class="form-label">Program yang Dipilih</label>
-                            <select id="program" class="form-control" required>
+                            <select id="program" name="program" class="form-control" required>
                                 <option value="">Pilih Program</option>
                                 <option value="kelompok-bermain">Kelompok Bermain (2-3 tahun)</option>
                                 <option value="taman-kanak">Taman Kanak-Kanak (4-6 tahun)</option>
@@ -152,7 +157,7 @@
                         
                         <div class="form-group">
                             <label for="info" class="form-label">Bagaimana Anda mengetahui tentang PAUD Imanda?</label>
-                            <select id="info" class="form-control">
+                            <select id="info" name="info" class="form-control">
                                 <option value="">Pilih salah satu</option>
                                 <option value="internet">Internet/Media Sosial</option>
                                 <option value="teman">Rekomendasi Teman/Keluarga</option>
@@ -176,10 +181,10 @@
                 <h3>Tentang Kami</h3>
                 <p>PAUD Imanda adalah lembaga pendidikan anak usia dini yang berdedikasi untuk menciptakan fondasi yang kokoh bagi masa depan anak-anak.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Facebook PAUD Imanda"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram PAUD Imanda"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube PAUD Imanda"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/6281234567890" aria-label="WhatsApp PAUD Imanda"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             
@@ -196,20 +201,25 @@
             
             <div class="footer-column">
                 <h3>Kontak Kami</h3>
-                <ul class="footer-links">
-                    <li><i class="fas fa-map-marker-alt"></i> Jln. Halteu Utara VI No. 1, Bandung</li>
-                    <li><i class="fas fa-phone"></i> (022) 1234567</li>
-                    <li><i class="fas fa-envelope"></i> info@paudimanda.sch.id</li>
-                    <li><i class="fas fa-clock"></i> Senin-Jumat: 07.30-14.00</li>
-                </ul>
+                <address>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Jln. Halteu Utara VI No. 1, Bandung</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+62221234567">(022) 1234567</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@paudimanda.sch.id">info@paudimanda.sch.id</a></li>
+                        <li><i class="fas fa-clock"></i> Senin-Jumat: 07.30-14.00</li>
+                    </ul>
+                </address>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2023 PAUD Imanda Bandung. Semua Hak Dilindungi.</p>
+            <p>&copy; <span id="current-year">2023</span> PAUD Imanda Bandung. Semua Hak Dilindungi.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Update year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
-</html> 
+</html>
