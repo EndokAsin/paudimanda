@@ -249,57 +249,102 @@ document.addEventListener('DOMContentLoaded', function() {
     // Jalankan saat resize
     window.addEventListener('resize', animateElements);
 
-   // ==================== MOBILE MENU TOGGLE (REVISI) ====================
+  // ==================== MOBILE MENU TOGGLE WITH SUBMENU SUPPORT ====================
 function initMobileMenu() {
     const nav = document.querySelector('nav');
     const headerContainer = document.querySelector('.header-container');
 
     if (!nav || !headerContainer) return;
 
+    // Buat tombol toggle jika belum ada
     let menuToggle = document.querySelector('.mobile-menu-toggle');
-
-    // Buat tombol jika belum ada
     if (!menuToggle) {
         menuToggle = document.createElement('button');
         menuToggle.className = 'mobile-menu-toggle';
         menuToggle.setAttribute('aria-label', 'Toggle menu');
-        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        menuToggle.innerHTML = '<span></span><span></span><span></span>';
         headerContainer.appendChild(menuToggle);
     }
 
+    // Fungsi untuk toggle menu dan submenu
     const toggleMenu = () => {
         nav.classList.toggle('active');
-        menuToggle.innerHTML = nav.classList.contains('active') 
-            ? '<i class="fas fa-times"></i>'
-            : '<i class="fas fa-bars"></i>';
+        menuToggle.classList.toggle('active');
+        
+        // Tutup semua submenu saat menu utama ditutup
+        if (!nav.classList.contains('active')) {
+            document.querySelectorAll('.submenu').forEach(submenu => {
+                submenu.classList.remove('active');
+            });
+            document.querySelectorAll('.menu-item-has-children').forEach(item => {
+                item.classList.remove('active');
+            });
+        }
     };
 
-    // Event klik toggle
-    menuToggle.onclick = toggleMenu;
+    // Handle submenu toggle
+    const handleSubmenu = (e) => {
+        if (window.innerWidth > 768) return;
+        
+        const parentItem = e.target.closest('.menu-item-has-children');
+        if (!parentItem) return;
+        
+        e.preventDefault();
+        const submenu = parentItem.querySelector('.submenu');
+        
+        // Tutup submenu lain yang terbuka
+        document.querySelectorAll('.submenu').forEach(menu => {
+            if (menu !== submenu) menu.classList.remove('active');
+        });
+        document.querySelectorAll('.menu-item-has-children').forEach(item => {
+            if (item !== parentItem) item.classList.remove('active');
+        });
+        
+        // Toggle submenu yang diklik
+        parentItem.classList.toggle('active');
+        submenu.classList.toggle('active');
+    };
 
-    // Tutup menu saat link diklik (hanya di mobile)
-    nav.querySelectorAll('a').forEach(link => {
-        link.onclick = () => {
-            if (window.innerWidth <= 768) {
-                nav.classList.remove('active');
-                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        };
+    // Event listeners
+    menuToggle.addEventListener('click', toggleMenu);
+    
+    // Delegasi event untuk submenu
+    nav.addEventListener('click', function(e) {
+        // Jika yang diklik adalah link dengan submenu
+        if (e.target.closest('.menu-item-has-children > a')) {
+            handleSubmenu(e);
+        }
+        
+        // Jika yang diklik adalah link biasa di mobile
+        if (window.innerWidth <= 768 && !e.target.closest('.menu-item-has-children')) {
+            toggleMenu();
+        }
     });
 
-    // Atur visibilitas tombol berdasarkan ukuran layar
-    if (window.innerWidth <= 768) {
-        menuToggle.style.display = 'flex';
-        nav.classList.remove('active');
-    } else {
-        menuToggle.style.display = 'none';
-        nav.classList.remove('active');
-    }
+    // Responsive behavior
+    const checkScreenSize = () => {
+        if (window.innerWidth <= 768) {
+            menuToggle.style.display = 'flex';
+            nav.classList.remove('active');
+            menuToggle.classList.remove('active');
+        } else {
+            menuToggle.style.display = 'none';
+            nav.classList.remove('active');
+            menuToggle.classList.remove('active');
+            // Pastikan semua submenu terbuka di desktop
+            document.querySelectorAll('.submenu').forEach(submenu => {
+                submenu.classList.add('active');
+            });
+        }
+    };
+
+    // Inisialisasi
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
 }
 
-// Panggil fungsi saat load & resize
-initMobileMenu();
-window.addEventListener('resize', initMobileMenu);
+// Panggil fungsi saat load
+document.addEventListener('DOMContentLoaded', initMobileMenu);
 
 
 
