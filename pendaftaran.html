@@ -5,56 +5,211 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pendaftaran - PAUD Imanda Bandung</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <h1>PAUD Imanda</h1>
-            <p>Sekolah Penggerak Angkatan 2</p>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo PAUD Imanda">
+                <div class="logo-text">
+                    <h1>PAUD Imanda</h1>
+                    <p>Sekolah Penggerak Angkatan 2</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="program.html">Program</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="pendaftaran.html" class="active">Pendaftaran</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="profil.html">Profil</a></li>
-                <li><a href="program.html">Program</a></li>
-                <li><a href="galeri.html">Galeri</a></li>
-                <li><a href="pendaftaran.html" class="active">Pendaftaran</a></li>
-                <li><a href="kontak.html">Kontak</a></li>
-            </ul>
-        </nav>
     </header>
 
     <div class="container">
         <main>
-            <h2>Pendaftaran Siswa Baru</h2>
+            <h2 class="section-title">Pendaftaran Siswa Baru</h2>
             <p>Bergabunglah dengan keluarga besar PAUD Imanda! Kami membuka pendaftaran siswa baru untuk tahun ajaran yang akan datang. Kuota terbatas untuk memastikan proses belajar yang fokus dan efektif.</p>
-
-            <h3>Alur Pendaftaran</h3>
-            <ol class="styled-list" style="list-style-type: decimal; padding-left: 20px;">
-                <li style="padding-left: 10px;"><strong>Ambil Formulir:</strong> Kunjungi sekolah untuk mengambil formulir pendaftaran pada jam kerja.</li>
-                <li style="padding-left: 10px;"><strong>Lengkapi Berkas:</strong> Kembalikan formulir yang sudah diisi beserta dokumen persyaratan.</li>
-                <li style="padding-left: 10px;"><strong>Observasi dan Wawancara:</strong> Kami akan mengatur jadwal untuk sesi observasi anak dan wawancara singkat dengan orang tua.</li>
-                <li style="padding-left: 10px;"><strong>Pengumuman Kelulusan:</strong> Hasil penerimaan akan diumumkan melalui kontak yang terdaftar.</li>
-            </ol>
-
-            <h3>Persyaratan Dokumen</h3>
-            <ul class="styled-list">
-                <li>Formulir Pendaftaran yang telah diisi.</li>
-                <li>Fotokopi Akta Kelahiran Anak (1 lembar).</li>
-                <li>Fotokopi Kartu Keluarga (1 lembar).</li>
-                <li>Fotokopi KTP Ayah dan Ibu (masing-masing 1 lembar).</li>
-                <li>Pas foto berwarna anak ukuran 3x4 (2 lembar).</li>
-            </ul>
-
-            <div style="text-align:center; margin-top: 40px;">
-                <a href="kontak.html" class="button">Hubungi Kami Sekarang</a>
+            
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h3 class="subtitle">Alur Pendaftaran</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-number"></div>
+                            <div class="timeline-content">
+                                <h4>1. Ambil Formulir</h4>
+                                <p>Kunjungi sekolah untuk mengambil formulir pendaftaran pada jam kerja atau download formulir online.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-number"></div>
+                            <div class="timeline-content">
+                                <h4>2. Lengkapi Berkas</h4>
+                                <p>Kembalikan formulir yang sudah diisi beserta dokumen persyaratan yang diperlukan.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-number"></div>
+                            <div class="timeline-content">
+                                <h4>3. Observasi dan Wawancara</h4>
+                                <p>Kami akan mengatur jadwal untuk sesi observasi anak dan wawancara singkat dengan orang tua.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-number"></div>
+                            <div class="timeline-content">
+                                <h4>4. Pengumuman Kelulusan</h4>
+                                <p>Hasil penerimaan akan diumumkan melalui kontak yang terdaftar dalam waktu 3 hari kerja.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card fade-in" style="animation-delay: 0.2s;">
+                <div class="card-content">
+                    <h3 class="subtitle">Persyaratan Dokumen</h3>
+                    <div class="requirements-grid">
+                        <div class="requirement-item">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Formulir Pendaftaran yang telah diisi</span>
+                        </div>
+                        <div class="requirement-item">
+                            <i class="fas fa-birthday-cake"></i>
+                            <span>Fotokopi Akta Kelahiran Anak (1 lembar)</span>
+                        </div>
+                        <div class="requirement-item">
+                            <i class="fas fa-home"></i>
+                            <span>Fotokopi Kartu Keluarga (1 lembar)</span>
+                        </div>
+                        <div class="requirement-item">
+                            <i class="fas fa-id-card"></i>
+                            <span>Fotokopi KTP Ayah dan Ibu (masing-masing 1 lembar)</span>
+                        </div>
+                        <div class="requirement-item">
+                            <i class="fas fa-camera"></i>
+                            <span>Pas foto berwarna anak ukuran 3x4 (2 lembar)</span>
+                        </div>
+                        <div class="requirement-item">
+                            <i class="fas fa-file-medical"></i>
+                            <span>Surat keterangan sehat dari dokter (untuk siswa baru)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card fade-in" style="animation-delay: 0.4s;">
+                <div class="card-content">
+                    <h3 class="subtitle">Formulir Pendaftaran Online</h3>
+                    <form id="registrationForm" class="registration-form">
+                        <div class="form-group">
+                            <label for="childName" class="form-label">Nama Lengkap Anak</label>
+                            <input type="text" id="childName" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="birthDate" class="form-label">Tanggal Lahir</label>
+                            <input type="date" id="birthDate" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="parentName" class="form-label">Nama Orang Tua/Wali</label>
+                            <input type="text" id="parentName" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Nomor Telepon</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address" class="form-label">Alamat Lengkap</label>
+                            <textarea id="address" class="form-control" rows="3" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="program" class="form-label">Program yang Dipilih</label>
+                            <select id="program" class="form-control" required>
+                                <option value="">Pilih Program</option>
+                                <option value="kelompok-bermain">Kelompok Bermain (2-3 tahun)</option>
+                                <option value="taman-kanak">Taman Kanak-Kanak (4-6 tahun)</option>
+                                <option value="daycare">Daycare (Perawatan Harian)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="info" class="form-label">Bagaimana Anda mengetahui tentang PAUD Imanda?</label>
+                            <select id="info" class="form-control">
+                                <option value="">Pilih salah satu</option>
+                                <option value="internet">Internet/Media Sosial</option>
+                                <option value="teman">Rekomendasi Teman/Keluarga</option>
+                                <option value="brosur">Brosur/Spanduk</option>
+                                <option value="lainnya">Lainnya</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-block">Kirim Pendaftaran</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </main>
     </div>
 
     <footer>
-        <p>&copy; 2025 PAUD Imanda Bandung</p>
-        <p>Jln. Halteu Utara VI No. 1 RT 04 RW 02, Bandung 40183</p>
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h3>Tentang Kami</h3>
+                <p>PAUD Imanda adalah lembaga pendidikan anak usia dini yang berdedikasi untuk menciptakan fondasi yang kokoh bagi masa depan anak-anak.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Link Cepat</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="profil.html">Profil Sekolah</a></li>
+                    <li><a href="program.html">Program Belajar</a></li>
+                    <li><a href="galeri.html">Galeri Kegiatan</a></li>
+                    <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Kontak Kami</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> Jln. Halteu Utara VI No. 1, Bandung</li>
+                    <li><i class="fas fa-phone"></i> (022) 1234567</li>
+                    <li><i class="fas fa-envelope"></i> info@paudimanda.sch.id</li>
+                    <li><i class="fas fa-clock"></i> Senin-Jumat: 07.30-14.00</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 PAUD Imanda Bandung. Semua Hak Dilindungi.</p>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
-</html>
+</html> 

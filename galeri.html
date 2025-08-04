@@ -5,44 +5,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeri - PAUD Imanda Bandung</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <h1>PAUD Imanda</h1>
-            <p>Sekolah Penggerak Angkatan 2</p>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo PAUD Imanda">
+                <div class="logo-text">
+                    <h1>PAUD Imanda</h1>
+                    <p>Sekolah Penggerak Angkatan 2</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="program.html">Program</a></li>
+                    <li><a href="galeri.html" class="active">Galeri</a></li>
+                    <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="profil.html">Profil</a></li>
-                <li><a href="program.html">Program</a></li>
-                <li><a href="galeri.html" class="active">Galeri</a></li>
-                <li><a href="pendaftaran.html">Pendaftaran</a></li>
-                <li><a href="kontak.html">Kontak</a></li>
-            </ul>
-        </nav>
     </header>
 
     <div class="container">
         <main>
-            <h2>Galeri Keceriaan Kami</h2>
-            <p>Intip momen-momen berharga saat anak-anak belajar, bermain, dan bertumbuh bersama di PAUD Imanda. Anda dapat mengganti gambar di bawah ini dengan foto-foto asli.</p>
-
+            <h2 class="section-title">Galeri Keceriaan Kami</h2>
+            <p>Intip momen-momen berharga saat anak-anak belajar, bermain, dan bertumbuh bersama di PAUD Imanda.</p>
+            
+            <div class="gallery-filter fade-in">
+                <button class="btn btn-outline active" data-filter="all">Semua</button>
+                <button class="btn btn-outline" data-filter="kegiatan">Kegiatan Kelas</button>
+                <button class="btn btn-outline" data-filter="outdoor">Bermain Outdoor</button>
+                <button class="btn btn-outline" data-filter="event">Acara Khusus</button>
+                <button class="btn btn-outline" data-filter="karya">Karya Anak</button>
+            </div>
+            
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="https://placehold.co/600x400/81C784/FFFFFF?text=Kegiatan+Kelas" alt="Kegiatan di dalam kelas"></div>
-                <div class="gallery-item"><img src="https://placehold.co/600x400/AED581/FFFFFF?text=Bermain+di+Luar" alt="Bermain di halaman sekolah"></div>
-                <div class="gallery-item"><img src="https://placehold.co/600x400/FFB74D/FFFFFF?text=Pentas+Seni" alt="Anak-anak saat pentas seni"></div>
-                <div class="gallery-item"><img src="https://placehold.co/600x400/4DB6AC/FFFFFF?text=Field+Trip" alt="Kunjungan edukatif ke luar sekolah"></div>
-                <div class="gallery-item"><img src="https://placehold.co/600x400/9575CD/FFFFFF?text=Membuat+Karya" alt="Hasil karya seni anak-anak"></div>
-                <div class="gallery-item"><img src="https://placehold.co/600x400/7986CB/FFFFFF?text=Hari+Kemerdekaan" alt="Lomba 17 Agustus"></div>
+                <div class="gallery-item" data-category="kegiatan">
+                    <img src="https://images.unsplash.com/photo-1600494603989-9650cf6ddd3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Kegiatan Kelas">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="outdoor">
+                    <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bermain di Taman">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="event">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Pentas Seni">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="kegiatan">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Belajar Membaca">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="karya">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Hasil Karya Anak">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="outdoor">
+                    <img src="https://images.unsplash.com/photo-1542600172989-af6e0c47e724?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bermain Air">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="event">
+                    <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Hari Kemerdekaan">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="karya">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Lukisan Anak">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="program.html" class="btn">Lihat Program Kami</a>
             </div>
         </main>
     </div>
 
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" src="" alt="">
+        <div class="lightbox-caption"></div>
+    </div>
+
     <footer>
-        <p>&copy; 2025 PAUD Imanda Bandung</p>
-        <p>Jln. Halteu Utara VI No. 1 RT 04 RW 02, Bandung 40183</p>
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h3>Tentang Kami</h3>
+                <p>PAUD Imanda adalah lembaga pendidikan anak usia dini yang berdedikasi untuk menciptakan fondasi yang kokoh bagi masa depan anak-anak.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Link Cepat</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="profil.html">Profil Sekolah</a></li>
+                    <li><a href="program.html">Program Belajar</a></li>
+                    <li><a href="galeri.html">Galeri Kegiatan</a></li>
+                    <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Kontak Kami</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> Jln. Halteu Utara VI No. 1, Bandung</li>
+                    <li><i class="fas fa-phone"></i> (022) 1234567</li>
+                    <li><i class="fas fa-envelope"></i> info@paudimanda.sch.id</li>
+                    <li><i class="fas fa-clock"></i> Senin-Jumat: 07.30-14.00</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 PAUD Imanda Bandung. Semua Hak Dilindungi.</p>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

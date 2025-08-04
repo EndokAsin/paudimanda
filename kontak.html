@@ -5,48 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontak - PAUD Imanda Bandung</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <h1>PAUD Imanda</h1>
-            <p>Sekolah Penggerak Angkatan 2</p>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo PAUD Imanda">
+                <div class="logo-text">
+                    <h1>PAUD Imanda</h1>
+                    <p>Sekolah Penggerak Angkatan 2</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="program.html">Program</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                    <li><a href="kontak.html" class="active">Kontak</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="profil.html">Profil</a></li>
-                <li><a href="program.html">Program</a></li>
-                <li><a href="galeri.html">Galeri</a></li>
-                <li><a href="pendaftaran.html">Pendaftaran</a></li>
-                <li><a href="kontak.html" class="active">Kontak</a></li>
-            </ul>
-        </nav>
     </header>
 
     <div class="container">
         <main>
-            <h2>Hubungi Kami</h2>
+            <h2 class="section-title">Hubungi Kami</h2>
             <p>Jangan ragu untuk menghubungi kami jika ada pertanyaan atau ingin menjadwalkan kunjungan ke sekolah. Kami siap membantu Anda.</p>
             
-            <h3>Alamat Lengkap</h3>
-            <p>
-                <strong>PAUD Imanda</strong><br>
-                Jln. Halteu Utara VI No. 1, RT 04 RW 02<br>
-                Kelurahan Dunguscariang, Kecamatan Andir<br>
-                Bandung, Jawa Barat 40183
-            </p>
-
-            <h3>Informasi Kontak</h3>
-            <ul class="styled-list">
-                <li><strong>Telepon/WhatsApp:</strong> 0812-3456-7890 (Ganti dengan nomor asli)</li>
-                <li><strong>Email:</strong> kontak@paudimanda.sch.id (Ganti dengan email asli)</li>
-                <li><strong>Jam Operasional:</strong> Senin - Jumat, pukul 07.30 - 14.00 WIB</li>
-            </ul>
-
-            <h3>Peta Lokasi</h3>
-            <div class="map-container">
-                <!-- Peta lokasi telah diperbarui -->
+            <div class="contact-grid">
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Alamat</h3>
+                    <p>Jln. Halteu Utara VI No. 1, RT 04 RW 02<br>
+                    Kelurahan Dunguscariang, Kecamatan Andir<br>
+                    Bandung, Jawa Barat 40183</p>
+                </div>
+                
+                <div class="contact-card fade-in" style="animation-delay: 0.2s;">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Telepon</h3>
+                    <p>(022) 1234567<br>
+                    WhatsApp: 0812-3456-7890</p>
+                    <a href="https://wa.me/6281234567890" class="btn btn-outline" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
+                    </a>
+                </div>
+                
+                <div class="contact-card fade-in" style="animation-delay: 0.4s;">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>info@paudimanda.sch.id<br>
+                    pendaftaran@paudimanda.sch.id</p>
+                    <a href="mailto:info@paudimanda.sch.id" class="btn btn-outline">
+                        <i class="fas fa-paper-plane"></i> Kirim Email
+                    </a>
+                </div>
+                
+                <div class="contact-card fade-in" style="animation-delay: 0.6s;">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Jam Operasional</h3>
+                    <p>Senin - Jumat: 07.30 - 14.00 WIB<br>
+                    Sabtu: 08.00 - 12.00 WIB<br>
+                    Minggu & Hari Libur: Tutup</p>
+                </div>
+            </div>
+            
+            <div class="card fade-in" style="animation-delay: 0.8s;">
+                <div class="card-content">
+                    <h3 class="subtitle">Kirim Pesan kepada Kami</h3>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName" class="form-label">Nama Lengkap</label>
+                                <input type="text" id="contactName" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactEmail" class="form-label">Email</label>
+                                <input type="email" id="contactEmail" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactSubject" class="form-label">Subjek</label>
+                            <select id="contactSubject" class="form-control" required>
+                                <option value="">Pilih Subjek</option>
+                                <option value="pendaftaran">Pendaftaran Siswa Baru</option>
+                                <option value="informasi">Permintaan Informasi</option>
+                                <option value="kunjungan">Jadwal Kunjungan</option>
+                                <option value="lainnya">Lainnya</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactMessage" class="form-label">Pesan</label>
+                            <textarea id="contactMessage" class="form-control" rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn">Kirim Pesan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <h3 class="subtitle fade-in" style="animation-delay: 1s;">Lokasi Kami</h3>
+            <div class="map-container fade-in" style="animation-delay: 1s;">
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.969874837581!2d107.58550181477268!3d-6.89413899501838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e643c680962b%3A0x6739655f8849b4c0!2sPAUD%20IMANDA!5e0!3m2!1sen!2sid!4v1722864115201!5m2!1sen!2sid" 
                     width="100%" 
@@ -61,8 +136,45 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 PAUD Imanda Bandung</p>
-        <p>Jln. Halteu Utara VI No. 1 RT 04 RW 02, Bandung 40183</p>
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h3>Tentang Kami</h3>
+                <p>PAUD Imanda adalah lembaga pendidikan anak usia dini yang berdedikasi untuk menciptakan fondasi yang kokoh bagi masa depan anak-anak.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Link Cepat</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="profil.html">Profil Sekolah</a></li>
+                    <li><a href="program.html">Program Belajar</a></li>
+                    <li><a href="galeri.html">Galeri Kegiatan</a></li>
+                    <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Kontak Kami</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> Jln. Halteu Utara VI No. 1, Bandung</li>
+                    <li><i class="fas fa-phone"></i> (022) 1234567</li>
+                    <li><i class="fas fa-envelope"></i> info@paudimanda.sch.id</li>
+                    <li><i class="fas fa-clock"></i> Senin-Jumat: 07.30-14.00</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 PAUD Imanda Bandung. Semua Hak Dilindungi.</p>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
