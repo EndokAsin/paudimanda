@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Jalankan saat resize
     window.addEventListener('resize', animateElements);
 
-   // ==================== MOBILE MENU TOGGLE ====================
+   // ==================== MOBILE MENU TOGGLE (REVISI) ====================
 function initMobileMenu() {
     const nav = document.querySelector('nav');
     const headerContainer = document.querySelector('.header-container');
@@ -262,41 +262,45 @@ function initMobileMenu() {
     if (!menuToggle) {
         menuToggle = document.createElement('button');
         menuToggle.className = 'mobile-menu-toggle';
+        menuToggle.setAttribute('aria-label', 'Toggle menu');
         menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        headerContainer.appendChild(menuToggle); // Ditaruh di samping logo/teks
+        headerContainer.appendChild(menuToggle);
     }
 
-    // Atur posisi default
+    const toggleMenu = () => {
+        nav.classList.toggle('active');
+        menuToggle.innerHTML = nav.classList.contains('active') 
+            ? '<i class="fas fa-times"></i>'
+            : '<i class="fas fa-bars"></i>';
+    };
+
+    // Event klik toggle
+    menuToggle.onclick = toggleMenu;
+
+    // Tutup menu saat link diklik (hanya di mobile)
+    nav.querySelectorAll('a').forEach(link => {
+        link.onclick = () => {
+            if (window.innerWidth <= 768) {
+                nav.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        };
+    });
+
+    // Atur visibilitas tombol berdasarkan ukuran layar
     if (window.innerWidth <= 768) {
         menuToggle.style.display = 'flex';
-        nav.classList.remove('open'); // Pastikan tertutup di awal
-
-        // Klik toggle
-        menuToggle.onclick = () => {
-            nav.classList.toggle('open');
-            menuToggle.innerHTML = nav.classList.contains('open') 
-                ? '<i class="fas fa-times"></i>'
-                : '<i class="fas fa-bars"></i>';
-        };
-
-        // Tutup menu saat link diklik
-        nav.querySelectorAll('a').forEach(link => {
-            link.onclick = () => {
-                nav.classList.remove('open');
-                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            };
-        });
-
+        nav.classList.remove('active');
     } else {
-        // Desktop mode
         menuToggle.style.display = 'none';
-        nav.classList.remove('open');
+        nav.classList.remove('active');
     }
 }
 
 // Panggil fungsi saat load & resize
 initMobileMenu();
 window.addEventListener('resize', initMobileMenu);
+
 
 
 // ==================== BACK TO TOP BUTTON ====================
