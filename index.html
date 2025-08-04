@@ -13,7 +13,7 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <img src="logo.png" alt="Logo PAUD Imanda Bandung">
+                <img src="logo.png" alt="Logo PAUD Imanda Bandung" width="50" height="50">
                 <div class="logo-text">
                     <h1>PAUD Imanda</h1>
                     <p>Sekolah Penggerak Angkatan 2</p>
@@ -21,16 +21,25 @@
             </div>
             
             <!-- Tombol Hamburger -->
-            <button class="mobile-menu-toggle" aria-label="Buka menu navigasi">
-                <i class="fas fa-bars"></i>
+            <button class="mobile-menu-toggle" aria-label="Buka menu navigasi" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
             </button>
 
             <!-- Navigasi -->
-            <nav>
+            <nav aria-label="Menu utama">
                 <ul>
-                    <li><a href="index.html" class="active">Beranda</a></li>
+                    <li><a href="index.html" class="active" aria-current="page">Beranda</a></li>
                     <li><a href="profil.html">Profil</a></li>
-                    <li><a href="program.html">Program</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="program.html" aria-haspopup="true">Program <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="submenu">
+                            <li><a href="program.html#kesehatan">Program Kesehatan</a></li>
+                            <li><a href="program.html#kecerdasan">Program Kecerdasan</a></li>
+                            <li><a href="program.html#karakter">Program Karakter</a></li>
+                        </ul>
+                    </li>
                     <li><a href="galeri.html">Galeri</a></li>
                     <li><a href="pendaftaran.html">Pendaftaran</a></li>
                     <li><a href="kontak.html">Kontak</a></li>
@@ -40,63 +49,65 @@
     </header>
 
     <div class="container">
-        <section class="hero fade-in">
+        <section class="hero fade-in" aria-labelledby="hero-heading">
             <div class="hero-content">
-                <h2>Membentuk Generasi Sehat, Cerdas, dan Ceria</h2>
+                <h2 id="hero-heading">Membentuk Generasi Sehat, Cerdas, dan Ceria</h2>
                 <p>Lingkungan belajar yang positif dan menyenangkan untuk tumbuh kembang optimal putra-putri Anda</p>
                 <a href="pendaftaran.html" class="btn">Daftar Sekarang</a>
             </div>
         </section>
 
         <main>
-            <h2 class="section-title fade-in">Kenapa Memilih PAUD Imanda?</h2>
-            <p>Kami berkomitmen untuk memberikan pendidikan usia dini terbaik yang berpusat pada anak. Melalui pendekatan bermain sambil belajar, kami menstimulasi setiap aspek perkembangan anak dalam suasana yang hangat dan mendukung.</p>
-            
-            <div class="card-grid">
-                <div class="card fade-in">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1600494603989-9650cf6ddd3d?auto=format&fit=crop&w=500&q=80" alt="Program Kesehatan" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Sehat</h3>
-                        <p>Membiasakan pola hidup bersih dan sehat melalui kegiatan senam, program gizi, dan pemeriksaan kesehatan rutin.</p>
-                        <a href="program.html#kesehatan" class="btn btn-outline">Selengkapnya</a>
-                    </div>
-                </div>
+            <article>
+                <h2 class="section-title fade-in">Kenapa Memilih PAUD Imanda?</h2>
+                <p>Kami berkomitmen untuk memberikan pendidikan usia dini terbaik yang berpusat pada anak. Melalui pendekatan bermain sambil belajar, kami menstimulasi setiap aspek perkembangan anak dalam suasana yang hangat dan mendukung.</p>
                 
-                <div class="card fade-in" style="animation-delay: 0.2s;">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=500&q=80" alt="Program Kecerdasan" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Cerdas</h3>
-                        <p>Merangsang rasa ingin tahu dan kreativitas dengan pembelajaran berbasis proyek dan permainan edukatif.</p>
-                        <a href="program.html#kecerdasan" class="btn btn-outline">Selengkapnya</a>
-                    </div>
+                <div class="card-grid">
+                    <section class="card fade-in" aria-labelledby="sehat-title">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1600494603989-9650cf6ddd3d?auto=format&fit=crop&w=500&q=80" alt="Anak-anak sedang senam bersama" loading="lazy" width="500" height="300">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title" id="sehat-title">Sehat</h3>
+                            <p>Membiasakan pola hidup bersih dan sehat melalui kegiatan senam, program gizi, dan pemeriksaan kesehatan rutin.</p>
+                            <a href="program.html#kesehatan" class="btn btn-outline">Selengkapnya</a>
+                        </div>
+                    </section>
+                    
+                    <section class="card fade-in" style="animation-delay: 0.2s;" aria-labelledby="cerdas-title">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=500&q=80" alt="Anak sedang belajar dengan puzzle" loading="lazy" width="500" height="300">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title" id="cerdas-title">Cerdas</h3>
+                            <p>Merangsang rasa ingin tahu dan kreativitas dengan pembelajaran berbasis proyek dan permainan edukatif.</p>
+                            <a href="program.html#kecerdasan" class="btn btn-outline">Selengkapnya</a>
+                        </div>
+                    </section>
+                    
+                    <section class="card fade-in" style="animation-delay: 0.4s;" aria-labelledby="ceria-title">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1541692641319-981cc79ee10a?auto=format&fit=crop&w=500&q=80" alt="Anak tersenyum saat bermain" loading="lazy" width="500" height="300">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title" id="ceria-title">Ceria</h3>
+                            <p>Menciptakan suasana belajar yang aman, nyaman, dan penuh kegembiraan untuk membangun karakter positif.</p>
+                            <a href="program.html#karakter" class="btn btn-outline">Selengkapnya</a>
+                        </div>
+                    </section>
                 </div>
-                
-                <div class="card fade-in" style="animation-delay: 0.4s;">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1541692641319-981cc79ee10a?auto=format&fit=crop&w=500&q=80" alt="Program Karakter" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title">Ceria</h3>
-                        <p>Menciptakan suasana belajar yang aman, nyaman, dan penuh kegembiraan untuk membangun karakter positif.</p>
-                        <a href="program.html#karakter" class="btn btn-outline">Selengkapnya</a>
-                    </div>
-                </div>
-            </div>
+            </article>
 
-            <section class="testimonials fade-in">
-                <h3 class="subtitle text-center">Apa Kata Orang Tua?</h3>
+            <section class="testimonials fade-in" aria-labelledby="testimonial-title">
+                <h3 class="subtitle text-center" id="testimonial-title">Apa Kata Orang Tua?</h3>
                 <div class="testimonial-slider">
-                    <div class="testimonial">
+                    <blockquote class="testimonial">
                         <div class="testimonial-content">
                             "Anak saya menjadi lebih mandiri dan percaya diri setelah bersekolah di PAUD Imanda. Metode pembelajarannya sangat menyenangkan!"
                         </div>
-                        <div class="testimonial-author">Ibu Siti</div>
+                        <footer class="testimonial-author">Ibu Siti</footer>
                         <div class="testimonial-role">Orang Tua Aliya</div>
-                    </div>
+                    </blockquote>
                 </div>
             </section>
         </main>
@@ -111,7 +122,7 @@
                     <a href="#" aria-label="Facebook PAUD Imanda"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" aria-label="Instagram PAUD Imanda"><i class="fab fa-instagram"></i></a>
                     <a href="#" aria-label="YouTube PAUD Imanda"><i class="fab fa-youtube"></i></a>
-                    <a href="#" aria-label="WhatsApp PAUD Imanda"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://wa.me/6281234567890" aria-label="WhatsApp PAUD Imanda"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             
@@ -128,28 +139,88 @@
             
             <div class="footer-column">
                 <h3>Kontak Kami</h3>
-                <ul class="footer-links">
-                    <li><i class="fas fa-map-marker-alt"></i> Jln. Halteu Utara VI No. 1, Bandung</li>
-                    <li><i class="fas fa-phone"></i> (022) 1234567</li>
-                    <li><i class="fas fa-envelope"></i> info@paudimanda.sch.id</li>
-                    <li><i class="fas fa-clock"></i> Senin-Jumat: 07.30-14.00</li>
-                </ul>
+                <address>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Jln. Halteu Utara VI No. 1, Bandung</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+62221234567">(022) 1234567</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@paudimanda.sch.id">info@paudimanda.sch.id</a></li>
+                        <li><i class="fas fa-clock"></i> Senin-Jumat: 07.30-14.00</li>
+                    </ul>
+                </address>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2023 PAUD Imanda Bandung. Semua Hak Dilindungi.</p>
+            <p>&copy; <span id="current-year">2023</span> PAUD Imanda Bandung. Semua Hak Dilindungi.</p>
         </div>
     </footer>
 
-    <!-- Script Menu Hamburger -->
-    <script>
-        const menuToggle = document.querySelector('.mobile-menu-toggle');
-        const navMenu = document.querySelector('nav ul');
+    <!-- Back to Top Button -->
+    <a href="#top" class="back-to-top" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
+    <!-- Script -->
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('nav');
+        const dropdownIcons = document.querySelectorAll('.dropdown-icon');
+        
         menuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
-            menuToggle.classList.toggle('open');
+            menuToggle.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', menuToggle.classList.contains('active'));
+        });
+        
+        // Dropdown Menu for Mobile
+        document.querySelectorAll('.menu-item-has-children > a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const submenu = link.parentElement.querySelector('.submenu');
+                    const icon = link.querySelector('.dropdown-icon');
+                    
+                    submenu.classList.toggle('active');
+                    icon.classList.toggle('fa-chevron-up');
+                    icon.classList.toggle('fa-chevron-down');
+                }
+            });
+        });
+        
+        // Update year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Animate on scroll
+        const animateElements = () => {
+            const elements = document.querySelectorAll('.fade-in:not(.animated)');
+            const windowHeight = window.innerHeight;
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('animated');
+                    const delay = element.getAttribute('data-delay') || 0;
+                    element.style.animationDelay = `${delay}ms`;
+                }
+            });
+        };
+        
+        // Run on load and scroll
+        window.addEventListener('load', animateElements);
+        window.addEventListener('scroll', animateElements);
+        
+        // Back to top button visibility
+        window.addEventListener('scroll', () => {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.style.opacity = '1';
+                backToTop.style.visibility = 'visible';
+            } else {
+                backToTop.style.opacity = '0';
+                backToTop.style.visibility = 'hidden';
+            }
         });
     </script>
 </body>
