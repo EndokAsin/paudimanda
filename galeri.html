@@ -4,25 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeri - PAUD Imanda Bandung</title>
+    <meta name="description" content="Galeri kegiatan PAUD Imanda Bandung - Sekolah Penggerak Angkatan 2. Lihat momen-momen berharga anak-anak belajar dan bermain.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
         <div class="container header-container">
             <div class="logo">
-                <img src="logo.png" alt="Logo PAUD Imanda">
+                <img src="logo.png" alt="Logo PAUD Imanda" width="50" height="50" loading="lazy">
                 <div class="logo-text">
                     <h1>PAUD Imanda</h1>
                     <p>Sekolah Penggerak Angkatan 2</p>
                 </div>
             </div>
-            <nav>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Buka menu navigasi" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <nav aria-label="Menu utama">
                 <ul>
                     <li><a href="index.html">Beranda</a></li>
                     <li><a href="profil.html">Profil</a></li>
                     <li><a href="program.html">Program</a></li>
-                    <li><a href="galeri.html" class="active">Galeri</a></li>
+                    <li><a href="galeri.html" class="active" aria-current="page">Galeri</a></li>
                     <li><a href="pendaftaran.html">Pendaftaran</a></li>
                     <li><a href="kontak.html">Kontak</a></li>
                 </ul>
@@ -32,73 +42,113 @@
 
     <div class="container">
         <main>
-            <h2 class="section-title">Galeri Keceriaan Kami</h2>
-            <p>Intip momen-momen berharga saat anak-anak belajar, bermain, dan bertumbuh bersama di PAUD Imanda.</p>
+            <h1 class="section-title">Galeri Keceriaan Kami</h1>
+            <p class="section-description">Intip momen-momen berharga saat anak-anak belajar, bermain, dan bertumbuh bersama di PAUD Imanda.</p>
             
-            <div class="gallery-filter fade-in">
-                <button class="btn btn-outline active" data-filter="all">Semua</button>
-                <button class="btn btn-outline" data-filter="kegiatan">Kegiatan Kelas</button>
-                <button class="btn btn-outline" data-filter="outdoor">Bermain Outdoor</button>
-                <button class="btn btn-outline" data-filter="event">Acara Khusus</button>
-                <button class="btn btn-outline" data-filter="karya">Karya Anak</button>
+            <div class="gallery-filter fade-in" role="group" aria-label="Filter galeri">
+                <button class="btn btn-outline active" data-filter="all" aria-pressed="true">Semua</button>
+                <button class="btn btn-outline" data-filter="kegiatan" aria-pressed="false">Kegiatan Kelas</button>
+                <button class="btn btn-outline" data-filter="outdoor" aria-pressed="false">Bermain Outdoor</button>
+                <button class="btn btn-outline" data-filter="event" aria-pressed="false">Acara Khusus</button>
+                <button class="btn btn-outline" data-filter="karya" aria-pressed="false">Karya Anak</button>
             </div>
             
-            <div class="gallery-grid">
-                <div class="gallery-item" data-category="kegiatan">
-                    <img src="https://images.unsplash.com/photo-1600494603989-9650cf6ddd3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Kegiatan Kelas">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
+            <div class="gallery-grid" role="region" aria-label="Koleksi foto">
+                <figure class="gallery-item" data-category="kegiatan">
+                    <img src="https://images.unsplash.com/photo-1600494603989-9650cf6ddd3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                         alt="Anak-anak sedang belajar di kelas dengan guru" 
+                         loading="lazy" 
+                         width="500" 
+                         height="300">
+                    <figcaption class="gallery-overlay">
+                        <span class="sr-only">Lihat lebih besar</span>
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                    </figcaption>
+                </figure>
                 
-                <div class="gallery-item" data-category="outdoor">
-                    <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bermain di Taman">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
+                <figure class="gallery-item" data-category="outdoor">
+                    <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                         alt="Anak-anak bermain di taman sekolah" 
+                         loading="lazy" 
+                         width="500" 
+                         height="300">
+                    <figcaption class="gallery-overlay">
+                        <span class="sr-only">Lihat lebih besar</span>
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                    </figcaption>
+                </figure>
                 
-                <div class="gallery-item" data-category="event">
-                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Pentas Seni">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
+                <figure class="gallery-item" data-category="event">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                         alt="Pentas seni anak-anak di panggung sekolah" 
+                         loading="lazy" 
+                         width="500" 
+                         height="300">
+                    <figcaption class="gallery-overlay">
+                        <span class="sr-only">Lihat lebih besar</span>
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                    </figcaption>
+                </figure>
                 
-                <div class="gallery-item" data-category="kegiatan">
-                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Belajar Membaca">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
+                <figure class="gallery-item" data-category="kegiatan">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                         alt="Guru sedang membimbing anak membaca buku" 
+                         loading="lazy" 
+                         width="500" 
+                         height="300">
+                    <figcaption class="gallery-overlay">
+                        <span class="sr-only">Lihat lebih besar</span>
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                    </figcaption>
+                </figure>
                 
-                <div class="gallery-item" data-category="karya">
-                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Hasil Karya Anak">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
+                <figure class="gallery-item" data-category="karya">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                         alt="Hasil karya seni anak-anak yang dipajang" 
+                         loading="lazy" 
+                         width="500" 
+                         height="300">
+                    <figcaption class="gallery-overlay">
+                        <span class="sr-only">Lihat lebih besar</span>
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                    </figcaption>
+                </figure>
                 
-                <div class="gallery-item" data-category="outdoor">
-                    <img src="https://images.unsplash.com/photo-1542600172989-af6e0c47e724?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bermain Air">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
+                <figure class="gallery-item" data-category="outdoor">
+                    <img src="https://images.unsplash.com/photo-1542600172989-af6e0c47e724?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                         alt="Anak-anak bermain air di area bermain" 
+                         loading="lazy" 
+                         width="500" 
+                         height="300">
+                    <figcaption class="gallery-overlay">
+                        <span class="sr-only">Lihat lebih besar</span>
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                    </figcaption>
+                </figure>
                 
-                <div class="gallery-item" data-category="event">
-                    <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Hari Kemerdekaan">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
+                <figure class="gallery-item" data-category="event">
+                    <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                         alt="Perayaan hari kemerdekaan di sekolah" 
+                         loading="lazy" 
+                         width="500" 
+                         height="300">
+                    <figcaption class="gallery-overlay">
+                        <span class="sr-only">Lihat lebih besar</span>
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                    </figcaption>
+                </figure>
                 
-                <div class="gallery-item" data-category="karya">
-                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Lukisan Anak">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
+                <figure class="gallery-item" data-category="karya">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                         alt="Lukisan warna-warni karya anak-anak" 
+                         loading="lazy" 
+                         width="500" 
+                         height="300">
+                    <figcaption class="gallery-overlay">
+                        <span class="sr-only">Lihat lebih besar</span>
+                        <i class="fas fa-search-plus" aria-hidden="true"></i>
+                    </figcaption>
+                </figure>
             </div>
             
             <div class="text-center" style="margin-top: 40px;">
@@ -108,10 +158,10 @@
     </div>
 
     <!-- Lightbox -->
-    <div class="lightbox">
-        <span class="lightbox-close">&times;</span>
+    <div class="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="lightbox-caption">
+        <button class="lightbox-close" aria-label="Tutup lightbox">&times;</button>
         <img class="lightbox-content" src="" alt="">
-        <div class="lightbox-caption"></div>
+        <div id="lightbox-caption" class="lightbox-caption"></div>
     </div>
 
     <footer>
@@ -120,10 +170,10 @@
                 <h3>Tentang Kami</h3>
                 <p>PAUD Imanda adalah lembaga pendidikan anak usia dini yang berdedikasi untuk menciptakan fondasi yang kokoh bagi masa depan anak-anak.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Facebook PAUD Imanda"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram PAUD Imanda"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube PAUD Imanda"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/6281234567890" aria-label="WhatsApp PAUD Imanda"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             
@@ -140,20 +190,112 @@
             
             <div class="footer-column">
                 <h3>Kontak Kami</h3>
-                <ul class="footer-links">
-                    <li><i class="fas fa-map-marker-alt"></i> Jln. Halteu Utara VI No. 1, Bandung</li>
-                    <li><i class="fas fa-phone"></i> (022) 1234567</li>
-                    <li><i class="fas fa-envelope"></i> info@paudimanda.sch.id</li>
-                    <li><i class="fas fa-clock"></i> Senin-Jumat: 07.30-14.00</li>
-                </ul>
+                <address>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Jln. Halteu Utara VI No. 1, Bandung</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+62221234567">(022) 1234567</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@paudimanda.sch.id">info@paudimanda.sch.id</a></li>
+                        <li><i class="fas fa-clock"></i> Senin-Jumat: 07.30-14.00</li>
+                    </ul>
+                </address>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2023 PAUD Imanda Bandung. Semua Hak Dilindungi.</p>
+            <p>&copy; <span id="current-year">2023</span> PAUD Imanda Bandung. Semua Hak Dilindungi.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Back to Top Button -->
+    <a href="#top" class="back-to-top" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('nav');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', menuToggle.classList.contains('active'));
+        });
+
+        // Gallery Filter Functionality
+        const filterButtons = document.querySelectorAll('.gallery-filter button');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active state
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-pressed', 'false');
+                });
+                button.classList.add('active');
+                button.setAttribute('aria-pressed', 'true');
+                
+                // Filter items
+                const filterValue = button.dataset.filter;
+                
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.dataset.category === filterValue) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                        }, 50);
+                    } else {
+                        item.style.opacity = '0';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Lightbox Functionality
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImg = lightbox.querySelector('.lightbox-content');
+        const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+        const closeBtn = lightbox.querySelector('.lightbox-close');
+        
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightboxCaption.textContent = img.alt;
+                lightbox.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = 'auto';
+        });
+        
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Update current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Back to top button visibility
+        window.addEventListener('scroll', () => {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.style.opacity = '1';
+                backToTop.style.visibility = 'visible';
+            } else {
+                backToTop.style.opacity = '0';
+                backToTop.style.visibility = 'hidden';
+            }
+        });
+    </script>
 </body>
 </html>
