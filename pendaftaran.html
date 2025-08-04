@@ -19,6 +19,15 @@
                     <p>Sekolah Penggerak Angkatan 2</p>
                 </div>
             </div>
+            
+            <!-- Tombol Hamburger -->
+            <button class="mobile-menu-toggle" aria-label="Buka menu navigasi" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <!-- Navigasi -->
             <nav aria-label="Menu utama">
                 <ul>
                     <li><a href="index.html">Beranda</a></li>
@@ -34,8 +43,8 @@
 
     <div class="container">
         <main>
-            <h2 class="section-title">Pendaftaran Siswa Baru</h2>
-            <p>Bergabunglah dengan keluarga besar PAUD Imanda! Kami membuka pendaftaran siswa baru untuk tahun ajaran yang akan datang. Kuota terbatas untuk memastikan proses belajar yang fokus dan efektif.</p>
+            <h2 class="section-title fade-in">Pendaftaran Siswa Baru</h2>
+            <p class="fade-in">Bergabunglah dengan keluarga besar PAUD Imanda! Kami membuka pendaftaran siswa baru untuk tahun ajaran yang akan datang. Kuota terbatas untuk memastikan proses belajar yang fokus dan efektif.</p>
             
             <!-- Alur Pendaftaran -->
             <div class="card fade-in">
@@ -217,9 +226,73 @@
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <a href="#top" class="back-to-top" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Script -->
     <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('nav');
+        const dropdownIcons = document.querySelectorAll('.dropdown-icon');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', menuToggle.classList.contains('active'));
+        });
+        
+        // Dropdown Menu for Mobile
+        document.querySelectorAll('.menu-item-has-children > a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const submenu = link.parentElement.querySelector('.submenu');
+                    const icon = link.querySelector('.dropdown-icon');
+                    
+                    submenu.classList.toggle('active');
+                    icon.classList.toggle('fa-chevron-up');
+                    icon.classList.toggle('fa-chevron-down');
+                }
+            });
+        });
+        
         // Update year in footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Animate on scroll
+        const animateElements = () => {
+            const elements = document.querySelectorAll('.fade-in:not(.animated)');
+            const windowHeight = window.innerHeight;
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('animated');
+                    const delay = element.getAttribute('data-delay') || 0;
+                    element.style.animationDelay = `${delay}ms`;
+                }
+            });
+        };
+        
+        // Run on load and scroll
+        window.addEventListener('load', animateElements);
+        window.addEventListener('scroll', animateElements);
+        
+        // Back to top button visibility
+        window.addEventListener('scroll', () => {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.style.opacity = '1';
+                backToTop.style.visibility = 'visible';
+            } else {
+                backToTop.style.opacity = '0';
+                backToTop.style.visibility = 'hidden';
+            }
+        });
     </script>
 </body>
 </html>
