@@ -253,52 +253,51 @@ document.addEventListener('DOMContentLoaded', function() {
 function initMobileMenu() {
     const nav = document.querySelector('nav');
     const headerContainer = document.querySelector('.header-container');
-    
+
     if (!nav || !headerContainer) return;
 
-    const existingToggle = document.querySelector('.mobile-menu-toggle');
+    let menuToggle = document.querySelector('.mobile-menu-toggle');
 
-    // Jika layar mobile
+    // Buat tombol jika belum ada
+    if (!menuToggle) {
+        menuToggle = document.createElement('button');
+        menuToggle.className = 'mobile-menu-toggle';
+        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        headerContainer.appendChild(menuToggle); // Ditaruh di samping logo/teks
+    }
+
+    // Atur posisi default
     if (window.innerWidth <= 768) {
-        // Buat toggle hanya jika belum ada
-        if (!existingToggle) {
-            const menuToggle = document.createElement('button');
-            menuToggle.className = 'mobile-menu-toggle';
-            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            headerContainer.prepend(menuToggle);
+        menuToggle.style.display = 'flex';
+        nav.classList.remove('open'); // Pastikan tertutup di awal
 
-            // Sembunyikan menu awal
-            nav.style.display = 'none';
+        // Klik toggle
+        menuToggle.onclick = () => {
+            nav.classList.toggle('open');
+            menuToggle.innerHTML = nav.classList.contains('open') 
+                ? '<i class="fas fa-times"></i>'
+                : '<i class="fas fa-bars"></i>';
+        };
 
-            // Event toggle menu
-            menuToggle.addEventListener('click', () => {
-                const isHidden = nav.style.display === 'none' || !nav.style.display;
-                nav.style.display = isHidden ? 'block' : 'none';
-                menuToggle.innerHTML = isHidden 
-                    ? '<i class="fas fa-times"></i>' 
-                    : '<i class="fas fa-bars"></i>';
-            });
+        // Tutup menu saat link diklik
+        nav.querySelectorAll('a').forEach(link => {
+            link.onclick = () => {
+                nav.classList.remove('open');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            };
+        });
 
-            // Tutup menu saat link di-klik
-            document.querySelectorAll('nav a').forEach(link => {
-                link.addEventListener('click', () => {
-                    nav.style.display = 'none';
-                    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-                });
-            });
-        }
     } else {
-        // Desktop: tampilkan menu dan hapus toggle jika ada
-        nav.style.display = '';
-        if (existingToggle) {
-            existingToggle.remove();
-        }
+        // Desktop mode
+        menuToggle.style.display = 'none';
+        nav.classList.remove('open');
     }
 }
 
-// Inisialisasi mobile menu
+// Panggil fungsi saat load & resize
 initMobileMenu();
 window.addEventListener('resize', initMobileMenu);
+
 
 // ==================== BACK TO TOP BUTTON ====================
 const backToTopButton = document.createElement('button');
