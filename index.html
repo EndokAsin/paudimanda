@@ -1,32 +1,156 @@
-/* Tombol hamburger */
-.mobile-menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - PAUD Imanda Bandung</title>
+    <meta name="description" content="PAUD Imanda Bandung - Sekolah Penggerak Angkatan 2. Pendidikan anak usia dini terbaik untuk generasi sehat, cerdas, dan ceria.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo PAUD Imanda Bandung">
+                <div class="logo-text">
+                    <h1>PAUD Imanda</h1>
+                    <p>Sekolah Penggerak Angkatan 2</p>
+                </div>
+            </div>
+            
+            <!-- Tombol Hamburger -->
+            <button class="mobile-menu-toggle" aria-label="Buka menu navigasi">
+                <i class="fas fa-bars"></i>
+            </button>
 
-/* Menu di mobile */
-@media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background: #fff;
-    position: absolute;
-    top: 70px;
-    right: 10px;
-    padding: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    border-radius: 8px;
-  }
+            <!-- Navigasi -->
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Beranda</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="program.html">Program</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  nav ul.active {
-    display: flex;
-  }
+    <div class="container">
+        <section class="hero fade-in">
+            <div class="hero-content">
+                <h2>Membentuk Generasi Sehat, Cerdas, dan Ceria</h2>
+                <p>Lingkungan belajar yang positif dan menyenangkan untuk tumbuh kembang optimal putra-putri Anda</p>
+                <a href="pendaftaran.html" class="btn">Daftar Sekarang</a>
+            </div>
+        </section>
 
-  .mobile-menu-toggle {
-    display: block;
-    color: #333;
-  }
-}
+        <main>
+            <h2 class="section-title fade-in">Kenapa Memilih PAUD Imanda?</h2>
+            <p>Kami berkomitmen untuk memberikan pendidikan usia dini terbaik yang berpusat pada anak. Melalui pendekatan bermain sambil belajar, kami menstimulasi setiap aspek perkembangan anak dalam suasana yang hangat dan mendukung.</p>
+            
+            <div class="card-grid">
+                <div class="card fade-in">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1600494603989-9650cf6ddd3d?auto=format&fit=crop&w=500&q=80" alt="Program Kesehatan" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Sehat</h3>
+                        <p>Membiasakan pola hidup bersih dan sehat melalui kegiatan senam, program gizi, dan pemeriksaan kesehatan rutin.</p>
+                        <a href="program.html#kesehatan" class="btn btn-outline">Selengkapnya</a>
+                    </div>
+                </div>
+                
+                <div class="card fade-in" style="animation-delay: 0.2s;">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=500&q=80" alt="Program Kecerdasan" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Cerdas</h3>
+                        <p>Merangsang rasa ingin tahu dan kreativitas dengan pembelajaran berbasis proyek dan permainan edukatif.</p>
+                        <a href="program.html#kecerdasan" class="btn btn-outline">Selengkapnya</a>
+                    </div>
+                </div>
+                
+                <div class="card fade-in" style="animation-delay: 0.4s;">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1541692641319-981cc79ee10a?auto=format&fit=crop&w=500&q=80" alt="Program Karakter" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Ceria</h3>
+                        <p>Menciptakan suasana belajar yang aman, nyaman, dan penuh kegembiraan untuk membangun karakter positif.</p>
+                        <a href="program.html#karakter" class="btn btn-outline">Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+
+            <section class="testimonials fade-in">
+                <h3 class="subtitle text-center">Apa Kata Orang Tua?</h3>
+                <div class="testimonial-slider">
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            "Anak saya menjadi lebih mandiri dan percaya diri setelah bersekolah di PAUD Imanda. Metode pembelajarannya sangat menyenangkan!"
+                        </div>
+                        <div class="testimonial-author">Ibu Siti</div>
+                        <div class="testimonial-role">Orang Tua Aliya</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h3>Tentang Kami</h3>
+                <p>PAUD Imanda adalah lembaga pendidikan anak usia dini yang berdedikasi untuk menciptakan fondasi yang kokoh bagi masa depan anak-anak.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook PAUD Imanda"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram PAUD Imanda"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube PAUD Imanda"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="WhatsApp PAUD Imanda"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Link Cepat</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="profil.html">Profil Sekolah</a></li>
+                    <li><a href="program.html">Program Belajar</a></li>
+                    <li><a href="galeri.html">Galeri Kegiatan</a></li>
+                    <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Kontak Kami</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> Jln. Halteu Utara VI No. 1, Bandung</li>
+                    <li><i class="fas fa-phone"></i> (022) 1234567</li>
+                    <li><i class="fas fa-envelope"></i> info@paudimanda.sch.id</li>
+                    <li><i class="fas fa-clock"></i> Senin-Jumat: 07.30-14.00</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 PAUD Imanda Bandung. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- Script Menu Hamburger -->
+    <script>
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
