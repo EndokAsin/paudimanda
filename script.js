@@ -249,87 +249,78 @@ document.addEventListener('DOMContentLoaded', function() {
     // Jalankan saat resize
     window.addEventListener('resize', animateElements);
 
-    // ==================== MOBILE MENU TOGGLE ====================
-    function initMobileMenu() {
-        const nav = document.querySelector('nav');
-        const headerContainer = document.querySelector('.header-container');
-        
-        if (!nav || !headerContainer) return;
-        
-        // Cek lebar layar
-        if (window.innerWidth <= 768) {
-            // Cek apakah toggle button sudah ada
-            let menuToggle = document.querySelector('.mobile-menu-toggle');
-            
-            if (!menuToggle) {
-                // Buat toggle button jika belum ada
-                menuToggle = document.createElement('button');
-                menuToggle.className = 'mobile-menu-toggle';
-                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-                headerContainer.prepend(menuToggle);
-                
-                // Sembunyikan menu awal
-                nav.style.display = 'none';
-                
-                // Tambahkan event listener
-                menuToggle.addEventListener('click', function() {
-                    if (nav.style.display === 'none' || !nav.style.display) {
-                        nav.style.display = 'block';
-                        this.innerHTML = '<i class="fas fa-times"></i>';
-                    } else {
-                        nav.style.display = 'none';
-                        this.innerHTML = '<i class="fas fa-bars"></i>';
-                    }
+   // ==================== MOBILE MENU TOGGLE ====================
+function initMobileMenu() {
+    const nav = document.querySelector('nav');
+    const headerContainer = document.querySelector('.header-container');
+    
+    if (!nav || !headerContainer) return;
+
+    const existingToggle = document.querySelector('.mobile-menu-toggle');
+
+    // Jika layar mobile
+    if (window.innerWidth <= 768) {
+        // Buat toggle hanya jika belum ada
+        if (!existingToggle) {
+            const menuToggle = document.createElement('button');
+            menuToggle.className = 'mobile-menu-toggle';
+            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            headerContainer.prepend(menuToggle);
+
+            // Sembunyikan menu awal
+            nav.style.display = 'none';
+
+            // Event toggle menu
+            menuToggle.addEventListener('click', () => {
+                const isHidden = nav.style.display === 'none' || !nav.style.display;
+                nav.style.display = isHidden ? 'block' : 'none';
+                menuToggle.innerHTML = isHidden 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+
+            // Tutup menu saat link di-klik
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.style.display = 'none';
+                    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
                 });
-                
-                // Tutup menu saat mengklik link
-                document.querySelectorAll('nav a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        nav.style.display = 'none';
-                        if (menuToggle) {
-                            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-                        }
-                    });
-                });
-            }
-        } else {
-            // Untuk layar besar, pastikan menu ditampilkan
-            nav.style.display = '';
-            
-            // Hapus toggle button jika ada
-            const menuToggle = document.querySelector('.mobile-menu-toggle');
-            if (menuToggle) {
-                menuToggle.remove();
-            }
+            });
+        }
+    } else {
+        // Desktop: tampilkan menu dan hapus toggle jika ada
+        nav.style.display = '';
+        if (existingToggle) {
+            existingToggle.remove();
         }
     }
+}
 
-    // Inisialisasi mobile menu
-    initMobileMenu();
-    window.addEventListener('resize', initMobileMenu);
+// Inisialisasi mobile menu
+initMobileMenu();
+window.addEventListener('resize', initMobileMenu);
 
-    // ==================== BACK TO TOP BUTTON ====================
-    const backToTopButton = document.createElement('button');
-    backToTopButton.className = 'back-to-top';
-    backToTopButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
-    document.body.appendChild(backToTopButton);
+// ==================== BACK TO TOP BUTTON ====================
+const backToTopButton = document.createElement('button');
+backToTopButton.className = 'back-to-top';
+backToTopButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
+document.body.appendChild(backToTopButton);
 
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
     });
+});
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTopButton.style.opacity = '1';
-            backToTopButton.style.visibility = 'visible';
-        } else {
-            backToTopButton.style.opacity = '0';
-            backToTopButton.style.visibility = 'hidden';
-        }
-    });
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopButton.style.opacity = '1';
+        backToTopButton.style.visibility = 'visible';
+    } else {
+        backToTopButton.style.opacity = '0';
+        backToTopButton.style.visibility = 'hidden';
+    }
 });
 
 // ==================== CSS UNTUK BACK TO TOP BUTTON ====================
@@ -372,7 +363,7 @@ const backToTopCSS = `
 }
 `;
 
-// Tambahkan CSS ke dalam dokumen
+// Tambahkan CSS ke halaman
 const styleElement = document.createElement('style');
-styleElement.textContent = backToTopCSS;
-document.head.appendChild(styleElement);
+styleElement.innerHTML = backToTopCSS;
+document.head.appendChild(styleElement);});
